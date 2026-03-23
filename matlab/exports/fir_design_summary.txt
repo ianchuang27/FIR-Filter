@@ -1,0 +1,36 @@
+FIR DESIGN SUMMARY
+==================
+
+Floating-point design
+  Order                    : 231
+  Taps                     : 232
+  Passband ripple          : 0.00478490
+  Stopband attenuation     : 80.0485 dB
+
+Chosen quantized design
+  Coefficient format       : Q1.21
+  Quantized passband ripple: 0.00478305
+  Quantized stopband attn  : 80.0462 dB
+  Input format             : Q1.15
+  Output format            : Q1.15
+  Product fractional bits  : 36
+  Safe accumulator width   : 39 bits
+  Shift to output          : 21 bits
+
+Overflow handling
+  Worst-case |acc| bound   : 149255061214
+  Largest |acc| seen       : 34201578422
+  Accumulator saturations  : 0
+  Output saturations       : 0
+
+Generated files
+  coeffs_float.txt
+  coeffs_quantized_int.txt
+  coeffs_L2_phase0_int.txt
+  coeffs_L2_phase1_int.txt
+  coeffs_L3_phase0_int.txt
+  coeffs_L3_phase1_int.txt
+  coeffs_L3_phase2_int.txt
+  x_input_q15.txt
+  y_golden_q15.txt
+  quantization_sweep.csv
