@@ -1,0 +1,419 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                            Design Compiler (R) NXT 
+
+               Version W-2024.09-SP2 for linux64 - Nov 28, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Wed Mar 18 21:29:07 2026
+Hostname:           ts3.ecse.rpi.edu
+CPU Model:          Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz
+CPU Details:        Cores = 64 : Sockets = 2 : Cache Size = 22528 KB : Freq = 3.90 GHz
+OS:                 Linux 4.18.0-553.105.1.el8_10.x86_64
+RAM:                187 GB (Free 132 GB)
+Swap:                 7 GB (Free   7 GB)
+Work Filesystem:    /home/chome mounted to 192.168.40.100:/data/chome
+Tmp Filesystem:     / mounted to /dev/md127
+Work Disk:          300 GB (Free 287 GB)
+Tmp Disk:            78 GB (Free  66 GB)
+
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+set DESIGN fir_pipelined
+fir_pipelined
+analyze -format sverilog {rtl/fir_pipelined.sv}
+Running PRESTO HDLC
+Compiling source file ./rtl/fir_pipelined.sv
+Opening include file ./include/fir_params_baseline.svh
+Opening include file ./include/fir_coeffs_baseline.svh
+Presto compilation completed successfully.
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db'
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/gtech.db'
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/standard.sldb'
+  Loading link library 'lsi_10k'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./rtl/fir_pipelined.sv:113: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./rtl/fir_pipelined.sv:115: signed to unsigned part selection occurs. (VER-318)
+Warning:  ./rtl/fir_pipelined.sv:117: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process in routine 'fir_pipelined' in file
+	 ./rtl/fir_pipelined.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|     x_delay_reg     | Flip-flop | 3712  |  Y  | N  | None  | Async | N  |  31  |
+|      s7_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s0_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s1_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s2_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s3_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s4_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s5_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      s6_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  64  |
+|      p3_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  81  |
+|      p0_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  81  |
+|      p1_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  81  |
+|      p2_r_reg       | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  81  |
+|      acc_r_reg      | Flip-flop |  39   |  Y  | N  | None  | Async | N  |  93  |
+|      y_out_reg      | Flip-flop |  16   |  Y  | N  | None  | Async | N  | 120  |
+==================================================================================
+Presto compilation completed successfully. (fir_pipelined)
+Module: fir_pipelined, Ports: 34, Input: 18, Output: 16, Inout: 0
+Module: fir_pipelined, Registers: 4235, Async set/reset: 4235, Sync set/reset: 0
+Information: Module fir_pipelined report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'fir_pipelined'.
+1
+current_design $DESIGN
+Current design is 'fir_pipelined'.
+{fir_pipelined}
+link
+
+  Linking design 'fir_pipelined'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  fir_pipelined               /home/chome/chuani/fir_dc/fir_pipelined.db
+  lsi_10k (library)           /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db
+  dw_foundation.sldb (library) /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb
+
+1
+check_design > reports/${DESIGN}_check.rpt
+create_clock -name clk -period 10 [get_ports clk]
+1
+set_input_delay 1 -clock clk [remove_from_collection [all_inputs] [get_ports {clk rst_n}]]
+1
+set_output_delay 1 -clock clk [all_outputs]
+1
+set_load 0.05 [all_outputs]
+1
+set_fix_multiple_port_nets -all -buffer_constants
+1
+compile_ultra -retime
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | W-2024.09-DWBB_202409.2 |     *     |
+| Licensed DW Building Blocks        | W-2024.09-DWBB_202409.2 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT WLM                                                           |
+| Command Line | compile_ultra -retime                                                             |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 4715                                   |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 4235                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 9                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'fir_pipelined'
+
+Loaded alib file './alib-52/lsi_10k.db.alib'
+Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
+Module: DW01_NAND2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fir_pipelined'
+ Implement Synthetic for 'fir_pipelined'.
+Information: Added key list 'DesignWare' to design 'fir_pipelined'. (DDB-72)
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Warning: Main library 'lsi_10k' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Warning: Target library(s) are not characterized for internal power.  Compile with power constraints is NOT recommended. (PWR-13)
+Information: In design 'fir_pipelined', the register 's0_r_reg[37]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[33]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[32]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[36]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[38]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[34]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[31]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's0_r_reg[35]' is removed because it is merged to 's0_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's1_r_reg[35]' is removed because it is merged to 's1_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's1_r_reg[36]' is removed because it is merged to 's1_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's1_r_reg[38]' is removed because it is merged to 's1_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's1_r_reg[34]' is removed because it is merged to 's1_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's1_r_reg[33]' is removed because it is merged to 's1_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's1_r_reg[37]' is removed because it is merged to 's1_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's2_r_reg[35]' is removed because it is merged to 's2_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's2_r_reg[34]' is removed because it is merged to 's2_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's2_r_reg[38]' is removed because it is merged to 's2_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's2_r_reg[36]' is removed because it is merged to 's2_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's2_r_reg[37]' is removed because it is merged to 's2_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's3_r_reg[38]' is removed because it is merged to 's3_r_reg[37]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's4_r_reg[38]' is removed because it is merged to 's4_r_reg[37]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's5_r_reg[35]' is removed because it is merged to 's5_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's5_r_reg[34]' is removed because it is merged to 's5_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's5_r_reg[38]' is removed because it is merged to 's5_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's5_r_reg[36]' is removed because it is merged to 's5_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's5_r_reg[37]' is removed because it is merged to 's5_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's6_r_reg[35]' is removed because it is merged to 's6_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's6_r_reg[36]' is removed because it is merged to 's6_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's6_r_reg[38]' is removed because it is merged to 's6_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's6_r_reg[34]' is removed because it is merged to 's6_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's6_r_reg[33]' is removed because it is merged to 's6_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's6_r_reg[37]' is removed because it is merged to 's6_r_reg[32]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[37]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[33]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[32]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[36]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[38]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[34]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[31]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 's7_r_reg[35]' is removed because it is merged to 's7_r_reg[30]'. (OPT-1215)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: In design 'fir_pipelined', the register 'p0_r_reg[37]' is removed because it is merged to 'p0_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p0_r_reg[35]' is removed because it is merged to 'p0_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p0_r_reg[34]' is removed because it is merged to 'p0_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p0_r_reg[36]' is removed because it is merged to 'p0_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p0_r_reg[38]' is removed because it is merged to 'p0_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p3_r_reg[37]' is removed because it is merged to 'p3_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p3_r_reg[35]' is removed because it is merged to 'p3_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p3_r_reg[34]' is removed because it is merged to 'p3_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p3_r_reg[36]' is removed because it is merged to 'p3_r_reg[33]'. (OPT-1215)
+Information: In design 'fir_pipelined', the register 'p3_r_reg[38]' is removed because it is merged to 'p3_r_reg[33]'. (OPT-1215)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:06:28  287363.0     12.02   10238.9       0.0                              0.0000
+    0:06:29  287209.0     12.02   10241.1       0.0                              0.0000
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:06:41  296403.0     11.83   10164.0       0.0                              0.0000
+    0:06:41  296403.0     11.83   10164.0       0.0                              0.0000
+    0:06:42  296403.0     11.83   10164.0       0.0                              0.0000
+
+  Beginning Global Optimizations
+  ------------------------------
+No buffer cells compatible for Numerical Synthesis
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:06:48  289230.0     11.83   10075.9       0.0                              0.0000
+    0:06:52  289404.0     11.66   10029.7       0.0                              0.0000
+    0:06:52  289404.0     11.66   10029.7       0.0                              0.0000
+    0:06:53  289412.0     11.66   10030.5       0.0                              0.0000
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db'
+    0:06:57  289338.0     11.66   10034.6       0.0                              0.0000
+    0:06:58  289338.0     11.66   10034.6       0.0                              0.0000
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:07:07  289338.0     11.66   10034.6       0.0                              0.0000
+    0:07:08  289349.0     11.66    9996.1       0.0                              0.0000
+    0:07:08  289354.0     11.66    9949.8       0.0                              0.0000
+    0:07:08  289354.0     11.66    9949.8       0.0                              0.0000
+    0:07:09  289354.0     11.66    9949.8       0.0                              0.0000
+    0:07:09  289354.0     11.66    9949.8       0.0                              0.0000
+    0:07:10  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:10  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:10  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:11  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:11  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:11  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:11  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:11  285150.0     11.66   10013.3       0.0                              0.0000
+    0:07:11  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:11  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:11  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:11  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:11  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:11  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285179.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285178.0     11.66   10012.3       0.0                              0.0000
+    0:07:12  285178.0     11.66   10012.3       0.0                              0.0000
+    0:07:28  285007.0     11.44    8991.6       0.0 DP_OP_934J1_127_7632/R_20988_RW_122/D    0.0000
+    0:07:29  285154.0     11.37    8982.1       0.0                              0.0000
+    0:07:29  285285.0     11.37    8980.5       0.0                              0.0000
+    0:07:29  285285.0     11.37    8980.5       0.0                              0.0000
+    0:07:31  285249.0     11.37    8980.1       0.0                              0.0000
+    0:07:31  285249.0     11.37    8980.1       0.0                              0.0000
+    0:07:32  285249.0     11.37    8980.1       0.0                              0.0000
+    0:07:32  285249.0     11.37    8980.1       0.0                              0.0000
+    0:07:32  285241.0     11.36    8978.8       0.0                              0.0000
+    0:07:32  285241.0     11.36    8978.8       0.0                              0.0000
+    0:07:32  285280.0     11.36    8978.5       0.0                              0.0000
+    0:07:32  285280.0     11.36    8978.5       0.0                              0.0000
+    0:07:41  285315.0     11.21    8944.5       0.0                              0.0000
+    0:07:41  285315.0     11.21    8944.5       0.0                              0.0000
+    0:07:41  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:41  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:42  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:42  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:42  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:42  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:43  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:43  285313.0     11.20    8944.4       0.0                              0.0000
+    0:07:43  285313.0     11.20    8944.4       0.0                              0.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:07:43  285312.0     11.20    8944.4       0.0                              0.0000
+    0:07:46  281467.0     11.20    8885.4       0.0                              0.0000
+    0:07:47  281465.0     11.20    8885.4       0.0                              0.0000
+    0:07:47  281465.0     11.20    8885.4       0.0                              0.0000
+    0:07:48  281447.0     11.20    8922.6       0.0                              0.0000
+    0:07:49  279380.0     11.20    8911.2       0.0                              0.0000
+    0:07:50  278265.0     11.20    8899.3       0.0                              0.0000
+    0:07:50  277865.0     11.20    8896.6       0.0                              0.0000
+    0:07:51  277874.0     11.20    8895.4       0.0                              0.0000
+    0:07:51  277874.0     11.20    8895.4       0.0                              0.0000
+    0:07:52  277872.0     11.20    8892.2       0.0                              0.0000
+    0:07:53  277933.0     11.20    8870.6       0.0                              0.0000
+    0:07:54  277959.0     11.20    8866.4       0.0                              0.0000
+    0:07:54  277959.0     11.20    8866.4       0.0                              0.0000
+    0:07:54  277959.0     11.20    8866.3       0.0                              0.0000
+    0:08:00  277336.0     11.20    8866.2       0.0                              0.0000
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'fir_pipelined' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 12841 load(s), 1 driver(s)
+     Net 'rst_n': 12841 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Warning: Main library 'lsi_10k' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+report_qor                 > reports/${DESIGN}_qor.rpt
+report_area                > reports/${DESIGN}_area.rpt
+report_timing -max_paths 5 > reports/${DESIGN}_timing.rpt
+report_power               > reports/${DESIGN}_power.rpt
+change_names -rules verilog -hier
+1
+write -hierarchy -format verilog -output netlist/${DESIGN}_syn.v
+Writing verilog file '/home/chome/chuani/fir_dc/netlist/fir_pipelined_syn.v'.
+1
+write -format ddc -hierarchy -output ddc/${DESIGN}.ddc
+Writing ddc file 'ddc/fir_pipelined.ddc'.
+1
+quit
+
+Memory usage for this session 523 Mbytes.
+Memory usage for this session including child processes 523 Mbytes.
+CPU usage for this session 488 seconds ( 0.14 hours ).
+Elapsed time for this session 495 seconds ( 0.14 hours ).
+
+Thank you...

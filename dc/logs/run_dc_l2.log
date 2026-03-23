@@ -1,0 +1,391 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                            Design Compiler (R) NXT 
+
+               Version W-2024.09-SP2 for linux64 - Nov 28, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Wed Mar 18 20:25:50 2026
+Hostname:           ts3.ecse.rpi.edu
+CPU Model:          Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz
+CPU Details:        Cores = 64 : Sockets = 2 : Cache Size = 22528 KB : Freq = 3.64 GHz
+OS:                 Linux 4.18.0-553.105.1.el8_10.x86_64
+RAM:                187 GB (Free 130 GB)
+Swap:                 7 GB (Free   7 GB)
+Work Filesystem:    /home/chome mounted to 192.168.40.100:/data/chome
+Tmp Filesystem:     / mounted to /dev/md127
+Work Disk:          300 GB (Free 287 GB)
+Tmp Disk:            78 GB (Free  66 GB)
+
+CPU Load: 7%, Ram Free: 130 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+set DESIGN fir_parallel_l2
+fir_parallel_l2
+analyze -format sverilog {rtl/fir_parallel_l2.sv}
+Running PRESTO HDLC
+Compiling source file ./rtl/fir_parallel_l2.sv
+Opening include file ./include/fir_params_baseline.svh
+Opening include file ./include/fir_l2_phase0.svh
+Opening include file ./include/fir_l2_phase1.svh
+Presto compilation completed successfully.
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db'
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/gtech.db'
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/standard.sldb'
+  Loading link library 'lsi_10k'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./rtl/fir_parallel_l2.sv:62: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./rtl/fir_parallel_l2.sv:64: signed to unsigned part selection occurs. (VER-318)
+Warning:  ./rtl/fir_parallel_l2.sv:66: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process in routine 'fir_parallel_l2' in file
+	 ./rtl/fir_parallel_l2.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|     x_delay_reg     | Flip-flop | 3712  |  Y  | N  | None  | None  | N  |  26  |
+|      y_out_reg      | Flip-flop |  16   |  Y  | N  | None  | Async | N  |  69  |
+==================================================================================
+Presto compilation completed successfully. (fir_parallel_l2)
+Module: fir_parallel_l2, Ports: 34, Input: 18, Output: 16, Inout: 0
+Module: fir_parallel_l2, Registers: 3728, Async set/reset: 16, Sync set/reset: 0
+Information: Module fir_parallel_l2 report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'fir_parallel_l2'.
+1
+current_design $DESIGN
+Current design is 'fir_parallel_l2'.
+{fir_parallel_l2}
+link
+
+  Linking design 'fir_parallel_l2'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  fir_parallel_l2             /home/chome/chuani/fir_dc/fir_parallel_l2.db
+  lsi_10k (library)           /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db
+  dw_foundation.sldb (library) /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb
+
+1
+check_design > reports/${DESIGN}_check.rpt
+create_clock -name clk -period 10 [get_ports clk]
+1
+set_input_delay 1 -clock clk [remove_from_collection [all_inputs] [get_ports {clk rst_n}]]
+1
+set_output_delay 1 -clock clk [all_outputs]
+1
+set_load 0.05 [all_outputs]
+1
+set_fix_multiple_port_nets -all -buffer_constants
+1
+compile_ultra
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 7%, Ram Free: 130 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | W-2024.09-DWBB_202409.2 |     *     |
+| Licensed DW Building Blocks        | W-2024.09-DWBB_202409.2 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT WLM                                                           |
+| Command Line | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 4208                                   |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 3728                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 9                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'fir_parallel_l2'
+
+Loaded alib file './alib-52/lsi_10k.db.alib'
+Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
+Module: DW01_NAND2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+CPU Load: 7%, Ram Free: 129 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fir_parallel_l2'
+ Implement Synthetic for 'fir_parallel_l2'.
+Information: Added key list 'DesignWare' to design 'fir_parallel_l2'. (DDB-72)
+CPU Load: 7%, Ram Free: 130 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Warning: Main library 'lsi_10k' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Warning: Target library(s) are not characterized for internal power.  Compile with power constraints is NOT recommended. (PWR-13)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:20:28  199357.0     36.76     585.7       0.0                              0.0000
+    0:20:29  199306.0     37.60     599.3       0.0                              0.0000
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:20:30  199306.0     37.60     599.3       0.0                              0.0000
+    0:20:30  199306.0     37.60     599.3       0.0                              0.0000
+
+  Beginning Global Optimizations
+  ------------------------------
+No buffer cells compatible for Numerical Synthesis
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:20:32  199091.0     37.60     599.3       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DP_OP_940_125_282_3'
+    0:28:56  199302.0     38.05     605.6       0.0                              0.0000
+    0:28:57  199301.0     37.67     599.9       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_14'
+    0:28:58  199046.0     39.85     634.5       0.0                              0.0000
+    0:28:58  199046.0     39.85     634.5       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_15'
+    0:28:58  199064.0     39.85     634.5       0.0                              0.0000
+    0:28:58  199064.0     39.85     634.5       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_16'
+    0:28:59  199046.0     39.85     634.5       0.0                              0.0000
+    0:28:59  199046.0     39.85     634.5       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_17'
+    0:28:59  199070.0     39.85     634.5       0.0                              0.0000
+    0:28:59  199070.0     39.85     634.5       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_18'
+  Mapping 'fir_parallel_l2_DW01_add_19'
+    0:28:59  199048.0     39.72     632.4       0.0                              0.0000
+    0:28:59  199048.0     39.72     632.4       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_20'
+    0:28:59  199088.0     39.98     636.5       0.0                              0.0000
+    0:28:59  199088.0     39.98     636.5       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_21'
+    0:28:59  199064.0     40.10     638.4       0.0                              0.0000
+    0:28:59  199064.0     40.10     638.4       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_22'
+    0:28:59  199082.0     39.62     630.8       0.0                              0.0000
+    0:28:59  199082.0     39.62     630.8       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_23'
+    0:28:59  199082.0     39.87     634.7       0.0                              0.0000
+    0:28:59  199082.0     39.87     634.7       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_24'
+    0:28:59  199064.0     39.62     630.8       0.0                              0.0000
+    0:28:59  199064.0     39.62     630.8       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_25'
+    0:28:59  199064.0     39.62     630.8       0.0                              0.0000
+    0:28:59  199064.0     39.62     630.8       0.0                              0.0000
+  Mapping 'fir_parallel_l2_DW01_add_26'
+  Mapping 'fir_parallel_l2_DW01_add_27'
+    0:29:00  199072.0     38.35     610.5       0.0                              0.0000
+    0:29:00  199072.0     38.35     610.5       0.0                              0.0000
+    0:29:10  199455.0     35.81     570.2       0.0                              0.0000
+    0:29:10  199455.0     35.81     570.2       0.0                              0.0000
+    0:29:10  199441.0     35.81     570.1       0.0                              0.0000
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db'
+    0:29:58  199432.0     35.75     569.2       0.0                              0.0000
+    0:29:59  199426.0     35.79     569.7       0.0                              0.0000
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:30:48  199389.0     35.76     569.2       0.0                              0.0000
+    0:30:48  199391.0     35.68     567.9       0.0                              0.0000
+    0:30:48  199391.0     35.68     567.9       0.0                              0.0000
+    0:30:48  199391.0     35.68     567.9       0.0                              0.0000
+    0:30:48  199391.0     35.68     567.9       0.0                              0.0000
+    0:30:49  199388.0     35.68     567.9       0.0                              0.0000
+    0:30:49  199388.0     35.68     567.9       0.0                              0.0000
+    0:30:53  199439.0     35.16     560.6       0.0                              0.0000
+    0:30:53  199439.0     35.16     560.6       0.0                              0.0000
+    0:30:54  199456.0     35.11     559.9       0.0                              0.0000
+    0:30:54  199456.0     35.11     559.9       0.0                              0.0000
+    0:30:55  199477.0     35.10     559.7       0.0                              0.0000
+    0:30:55  199477.0     35.10     559.7       0.0                              0.0000
+    0:31:02  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:02  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:04  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:04  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:04  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:04  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:05  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:05  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:06  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:06  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:07  199739.0     34.95     558.2       0.0                              0.0000
+    0:31:08  199762.0     34.85     556.5       0.0                              0.0000
+    0:31:09  199801.0     34.85     556.5       0.0                              0.0000
+    0:31:10  199818.0     34.80     555.7       0.0                              0.0000
+    0:31:13  199915.0     34.80     555.7       0.0                              0.0000
+    0:31:13  199915.0     34.80     555.7       0.0                              0.0000
+    0:31:14  199915.0     34.80     555.7       0.0                              0.0000
+    0:31:14  199915.0     34.80     555.7       0.0                              0.0000
+    0:31:16  199915.0     34.80     555.7       0.0                              0.0000
+    0:31:16  199915.0     34.80     555.7       0.0                              0.0000
+    0:31:16  199916.0     34.80     555.7       0.0                              0.0000
+    0:31:16  199916.0     34.80     555.7       0.0                              0.0000
+    0:31:17  199927.0     34.80     555.7       0.0                              0.0000
+    0:31:17  199927.0     34.80     555.7       0.0                              0.0000
+    0:31:24  200082.0     34.73     554.6       0.0                              0.0000
+    0:31:24  200082.0     34.73     554.6       0.0                              0.0000
+    0:31:25  200111.0     34.73     554.6       0.0                              0.0000
+    0:31:25  200111.0     34.73     554.6       0.0                              0.0000
+    0:31:26  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:26  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:27  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:27  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:28  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:28  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:29  200116.0     34.73     554.6       0.0                              0.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:31:30  200116.0     34.73     554.6       0.0                              0.0000
+    0:31:32  191280.0     34.73     554.6       0.0                              0.0000
+    0:31:33  191230.0     34.73     554.1       0.0                              0.0000
+    0:31:33  191230.0     34.73     554.1       0.0                              0.0000
+    0:31:34  191225.0     34.73     554.1       0.0                              0.0000
+    0:31:35  188294.0     34.73     554.1       0.0                              0.0000
+    0:31:36  186557.0     34.73     554.1       0.0                              0.0000
+    0:31:36  186341.0     34.73     554.1       0.0                              0.0000
+    0:31:37  186357.0     34.73     554.0       0.0                              0.0000
+    0:31:37  186357.0     34.73     554.0       0.0                              0.0000
+    0:31:37  186345.0     34.68     553.3       0.0                              0.0000
+    0:31:38  186345.0     34.68     553.3       0.0                              0.0000
+    0:31:38  186341.0     34.68     553.2       0.0                              0.0000
+    0:31:41  185310.0     34.68     553.2       0.0                              0.0000
+CPU Load: 1%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'fir_parallel_l2' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 3728 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Warning: Main library 'lsi_10k' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 1%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+report_qor                 > reports/${DESIGN}_qor.rpt
+report_area                > reports/${DESIGN}_area.rpt
+report_timing -max_paths 5 > reports/${DESIGN}_timing.rpt
+report_power               > reports/${DESIGN}_power.rpt
+change_names -rules verilog -hier
+1
+write -hierarchy -format verilog -output netlist/${DESIGN}_syn.v
+Writing verilog file '/home/chome/chuani/fir_dc/netlist/fir_parallel_l2_syn.v'.
+1
+write -format ddc -hierarchy -output ddc/${DESIGN}.ddc
+Writing ddc file 'ddc/fir_parallel_l2.ddc'.
+1
+quit
+
+Memory usage for this session 716 Mbytes.
+Memory usage for this session including child processes 716 Mbytes.
+CPU usage for this session 1904 seconds ( 0.53 hours ).
+Elapsed time for this session 1914 seconds ( 0.53 hours ).
+
+Thank you...

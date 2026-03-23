@@ -1,0 +1,858 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                            Design Compiler (R) NXT 
+
+               Version W-2024.09-SP2 for linux64 - Nov 28, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Wed Mar 18 20:18:29 2026
+Hostname:           ts3.ecse.rpi.edu
+CPU Model:          Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz
+CPU Details:        Cores = 64 : Sockets = 2 : Cache Size = 22528 KB : Freq = 3.90 GHz
+OS:                 Linux 4.18.0-553.105.1.el8_10.x86_64
+RAM:                187 GB (Free 132 GB)
+Swap:                 7 GB (Free   7 GB)
+Work Filesystem:    /home/chome mounted to 192.168.40.100:/data/chome
+Tmp Filesystem:     / mounted to /dev/md127
+Work Disk:          300 GB (Free 287 GB)
+Tmp Disk:            78 GB (Free  66 GB)
+
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+set DESIGN fir_baseline
+fir_baseline
+analyze -format sverilog {rtl/fir_baseline.sv}
+Running PRESTO HDLC
+Compiling source file ./rtl/fir_baseline.sv
+Opening include file ./include/fir_params_baseline.svh
+Opening include file ./include/fir_coeffs_baseline.svh
+Presto compilation completed successfully.
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db'
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/gtech.db'
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/standard.sldb'
+  Loading link library 'lsi_10k'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./rtl/fir_baseline.sv:56: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./rtl/fir_baseline.sv:58: signed to unsigned part selection occurs. (VER-318)
+Warning:  ./rtl/fir_baseline.sv:60: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process in routine 'fir_baseline' in file
+	 ./rtl/fir_baseline.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|     x_delay_reg     | Flip-flop | 3712  |  Y  | N  | None  | Async | N  |  23  |
+|      y_out_reg      | Flip-flop |  16   |  Y  | N  | None  | Async | N  |  63  |
+==================================================================================
+Presto compilation completed successfully. (fir_baseline)
+Module: fir_baseline, Ports: 34, Input: 18, Output: 16, Inout: 0
+Module: fir_baseline, Registers: 3728, Async set/reset: 3728, Sync set/reset: 0
+Information: Module fir_baseline report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'fir_baseline'.
+1
+current_design $DESIGN
+Current design is 'fir_baseline'.
+{fir_baseline}
+link
+
+  Linking design 'fir_baseline'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  fir_baseline                /home/chome/chuani/fir_dc/fir_baseline.db
+  lsi_10k (library)           /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db
+  dw_foundation.sldb (library) /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb
+
+1
+check_design > reports/${DESIGN}_check.rpt
+create_clock -name clk -period 10 [get_ports clk]
+1
+set_input_delay 1 -clock clk [remove_from_collection [all_inputs] [get_ports {clk rst_n}]]
+1
+set_output_delay 1 -clock clk [all_outputs]
+1
+set_load 0.05 [all_outputs]
+1
+set_fix_multiple_port_nets -all -buffer_constants
+1
+compile
+CPU Load: 2%, Ram Free: 132 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | W-2024.09-DWBB_202409.2 |     *     |
+| Licensed DW Building Blocks        | W-2024.09-DWBB_202409.2 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT                                                               |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 4208                                   |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 3728                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 9                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fir_baseline'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Mapping 'fir_baseline_DW_cmp_0'
+  Mapping 'fir_baseline_DW_cmp_1'
+Module: DW01_sub_width39, Ports: 119, Input: 79, Output: 40, Inout: 0
+Module: DW01_sub_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'fir_baseline_DW01_sub_0'
+Module: DW01_add_width39, Ports: 119, Input: 79, Output: 40, Inout: 0
+Module: DW01_add_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'fir_baseline_DW01_add_0'
+  Mapping 'fir_baseline_DW_cmp_2'
+Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
+Module: DW01_NAND2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width39' (rpl)
+  Processing 'DW01_add_width39'
+Module: DW01_add_width38, Ports: 116, Input: 77, Output: 39, Inout: 0
+Module: DW01_add_width38, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width38' (rpl)
+  Processing 'DW01_add_width38'
+Module: DW01_add_width37, Ports: 113, Input: 75, Output: 38, Inout: 0
+Module: DW01_add_width37, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width37' (rpl)
+  Processing 'DW01_add_width37'
+Module: DW01_add_width36, Ports: 110, Input: 73, Output: 37, Inout: 0
+Module: DW01_add_width36, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width36' (rpl)
+  Processing 'DW01_add_width36'
+Module: DW01_add_width35, Ports: 107, Input: 71, Output: 36, Inout: 0
+Module: DW01_add_width35, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width35' (rpl)
+  Processing 'DW01_add_width35'
+Module: DW01_add_width34, Ports: 104, Input: 69, Output: 35, Inout: 0
+Module: DW01_add_width34, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width34' (rpl)
+  Processing 'DW01_add_width34'
+Module: DW01_add_width33, Ports: 101, Input: 67, Output: 34, Inout: 0
+Module: DW01_add_width33, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width33' (rpl)
+  Processing 'DW01_add_width33'
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width32' (rpl)
+  Processing 'DW01_add_width32'
+Module: DW01_add_width31, Ports: 95, Input: 63, Output: 32, Inout: 0
+Module: DW01_add_width31, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width31' (rpl)
+  Processing 'DW01_add_width31'
+Module: DW01_add_width30, Ports: 92, Input: 61, Output: 31, Inout: 0
+Module: DW01_add_width30, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width30' (rpl)
+  Processing 'DW01_add_width30'
+Module: DW01_add_width29, Ports: 89, Input: 59, Output: 30, Inout: 0
+Module: DW01_add_width29, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width29' (rpl)
+  Processing 'DW01_add_width29'
+Module: DW01_add_width28, Ports: 86, Input: 57, Output: 29, Inout: 0
+Module: DW01_add_width28, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width28' (rpl)
+  Processing 'DW01_add_width28'
+Module: DW01_add_width27, Ports: 83, Input: 55, Output: 28, Inout: 0
+Module: DW01_add_width27, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_add_width27' (rpl)
+  Processing 'DW01_add_width27'
+  Building model 'DW01_sub_width39' (rpl)
+  Processing 'DW01_sub_width39'
+  Processing 'fir_baseline_DW01_add_1'
+  Processing 'fir_baseline_DW01_add_2'
+  Processing 'fir_baseline_DW01_add_3'
+  Processing 'fir_baseline_DW01_add_4'
+  Processing 'fir_baseline_DW01_add_5'
+  Processing 'fir_baseline_DW01_add_6'
+  Processing 'fir_baseline_DW01_add_7'
+  Processing 'fir_baseline_DW01_add_8'
+  Processing 'fir_baseline_DW01_add_9'
+  Processing 'fir_baseline_DW01_add_10'
+  Processing 'fir_baseline_DW01_add_11'
+  Processing 'fir_baseline_DW01_add_12'
+  Processing 'fir_baseline_DW01_add_13'
+  Processing 'fir_baseline_DW01_add_14'
+  Processing 'fir_baseline_DW01_add_15'
+  Processing 'fir_baseline_DW01_add_16'
+  Processing 'fir_baseline_DW01_add_17'
+  Processing 'fir_baseline_DW01_add_18'
+  Processing 'fir_baseline_DW01_add_19'
+  Processing 'fir_baseline_DW01_add_20'
+  Processing 'fir_baseline_DW01_add_21'
+  Processing 'fir_baseline_DW01_add_22'
+  Processing 'fir_baseline_DW01_add_23'
+  Processing 'fir_baseline_DW01_add_24'
+  Processing 'fir_baseline_DW01_add_25'
+  Processing 'fir_baseline_DW01_add_26'
+  Processing 'fir_baseline_DW01_add_27'
+  Processing 'fir_baseline_DW01_add_28'
+  Processing 'fir_baseline_DW01_add_29'
+  Processing 'fir_baseline_DW01_add_30'
+  Processing 'fir_baseline_DW01_add_31'
+  Processing 'fir_baseline_DW01_add_32'
+  Processing 'fir_baseline_DW01_add_33'
+  Processing 'fir_baseline_DW01_add_34'
+  Processing 'fir_baseline_DW01_add_35'
+  Processing 'fir_baseline_DW01_add_36'
+  Processing 'fir_baseline_DW01_add_37'
+  Processing 'fir_baseline_DW01_add_38'
+  Processing 'fir_baseline_DW01_add_39'
+  Processing 'fir_baseline_DW01_add_40'
+  Processing 'fir_baseline_DW01_add_41'
+  Processing 'fir_baseline_DW01_add_42'
+  Processing 'fir_baseline_DW01_add_43'
+  Processing 'fir_baseline_DW01_add_44'
+  Processing 'fir_baseline_DW01_add_45'
+  Processing 'fir_baseline_DW01_add_46'
+  Processing 'fir_baseline_DW01_add_47'
+  Processing 'fir_baseline_DW01_add_48'
+  Processing 'fir_baseline_DW01_add_49'
+  Processing 'fir_baseline_DW01_add_50'
+  Processing 'fir_baseline_DW01_add_51'
+  Processing 'fir_baseline_DW01_add_52'
+  Processing 'fir_baseline_DW01_add_53'
+  Processing 'fir_baseline_DW01_add_54'
+  Processing 'fir_baseline_DW01_add_55'
+  Processing 'fir_baseline_DW01_add_56'
+  Processing 'fir_baseline_DW01_add_57'
+  Processing 'fir_baseline_DW01_add_58'
+  Processing 'fir_baseline_DW01_add_59'
+  Processing 'fir_baseline_DW01_add_60'
+  Processing 'fir_baseline_DW01_add_61'
+  Processing 'fir_baseline_DW01_add_62'
+  Processing 'fir_baseline_DW01_add_63'
+  Processing 'fir_baseline_DW01_add_64'
+  Processing 'fir_baseline_DW01_add_65'
+  Processing 'fir_baseline_DW01_add_66'
+  Processing 'fir_baseline_DW01_add_67'
+  Processing 'fir_baseline_DW01_add_68'
+  Processing 'fir_baseline_DW01_add_69'
+  Processing 'fir_baseline_DW01_add_70'
+  Processing 'fir_baseline_DW01_add_71'
+  Processing 'fir_baseline_DW01_add_72'
+  Processing 'fir_baseline_DW01_add_73'
+  Processing 'fir_baseline_DW01_add_74'
+  Processing 'fir_baseline_DW01_add_75'
+  Processing 'fir_baseline_DW01_add_76'
+  Processing 'fir_baseline_DW01_add_77'
+  Processing 'fir_baseline_DW01_add_78'
+  Processing 'fir_baseline_DW01_add_79'
+  Processing 'fir_baseline_DW01_add_80'
+  Processing 'fir_baseline_DW01_add_81'
+  Processing 'fir_baseline_DW01_add_82'
+  Processing 'fir_baseline_DW01_add_83'
+  Processing 'fir_baseline_DW01_add_84'
+  Processing 'fir_baseline_DW01_add_85'
+  Processing 'fir_baseline_DW01_add_86'
+  Processing 'fir_baseline_DW01_add_87'
+  Processing 'fir_baseline_DW01_add_88'
+  Processing 'fir_baseline_DW01_add_89'
+  Processing 'fir_baseline_DW01_add_90'
+  Processing 'fir_baseline_DW01_add_91'
+  Processing 'fir_baseline_DW01_add_92'
+  Processing 'fir_baseline_DW01_add_93'
+  Processing 'fir_baseline_DW01_add_94'
+  Processing 'fir_baseline_DW01_add_95'
+  Processing 'fir_baseline_DW01_add_96'
+  Processing 'fir_baseline_DW01_add_97'
+  Processing 'fir_baseline_DW01_add_98'
+  Processing 'fir_baseline_DW01_add_99'
+  Processing 'fir_baseline_DW01_add_100'
+  Processing 'fir_baseline_DW01_add_101'
+  Processing 'fir_baseline_DW01_add_102'
+  Processing 'fir_baseline_DW01_add_103'
+  Processing 'fir_baseline_DW01_add_104'
+  Processing 'fir_baseline_DW01_add_105'
+  Processing 'fir_baseline_DW01_add_106'
+  Processing 'fir_baseline_DW01_add_107'
+  Processing 'fir_baseline_DW01_add_108'
+  Processing 'fir_baseline_DW01_add_109'
+  Processing 'fir_baseline_DW01_add_110'
+  Processing 'fir_baseline_DW01_add_111'
+  Processing 'fir_baseline_DW01_add_112'
+  Processing 'fir_baseline_DW01_add_113'
+  Processing 'fir_baseline_DW01_add_114'
+  Processing 'fir_baseline_DW01_add_115'
+  Processing 'fir_baseline_DW01_add_116'
+  Processing 'fir_baseline_DW01_add_117'
+  Processing 'fir_baseline_DW01_add_118'
+  Processing 'fir_baseline_DW01_add_119'
+  Processing 'fir_baseline_DW01_add_120'
+  Processing 'fir_baseline_DW01_add_121'
+  Processing 'fir_baseline_DW01_add_122'
+  Processing 'fir_baseline_DW01_add_123'
+  Processing 'fir_baseline_DW01_add_124'
+  Processing 'fir_baseline_DW01_add_125'
+  Processing 'fir_baseline_DW01_add_126'
+  Processing 'fir_baseline_DW01_add_127'
+  Processing 'fir_baseline_DW01_add_128'
+  Processing 'fir_baseline_DW01_add_129'
+  Processing 'fir_baseline_DW01_add_130'
+  Processing 'fir_baseline_DW01_add_131'
+  Processing 'fir_baseline_DW01_add_132'
+  Processing 'fir_baseline_DW01_add_133'
+  Processing 'fir_baseline_DW01_add_134'
+  Processing 'fir_baseline_DW01_add_135'
+  Processing 'fir_baseline_DW01_add_136'
+  Processing 'fir_baseline_DW01_add_137'
+  Processing 'fir_baseline_DW01_add_138'
+  Processing 'fir_baseline_DW01_add_139'
+  Processing 'fir_baseline_DW01_add_140'
+  Processing 'fir_baseline_DW01_add_141'
+  Processing 'fir_baseline_DW01_add_142'
+  Processing 'fir_baseline_DW01_add_143'
+  Processing 'fir_baseline_DW01_add_144'
+  Processing 'fir_baseline_DW01_add_145'
+  Processing 'fir_baseline_DW01_add_146'
+  Processing 'fir_baseline_DW01_add_147'
+  Processing 'fir_baseline_DW01_add_148'
+  Processing 'fir_baseline_DW01_add_149'
+  Processing 'fir_baseline_DW01_add_150'
+  Processing 'fir_baseline_DW01_add_151'
+  Processing 'fir_baseline_DW01_add_152'
+  Processing 'fir_baseline_DW01_add_153'
+  Processing 'fir_baseline_DW01_add_154'
+  Processing 'fir_baseline_DW01_add_155'
+  Processing 'fir_baseline_DW01_add_156'
+  Processing 'fir_baseline_DW01_add_157'
+  Processing 'fir_baseline_DW01_add_158'
+  Processing 'fir_baseline_DW01_add_159'
+  Processing 'fir_baseline_DW01_add_160'
+  Processing 'fir_baseline_DW01_add_161'
+  Processing 'fir_baseline_DW01_add_162'
+  Processing 'fir_baseline_DW01_add_163'
+  Processing 'fir_baseline_DW01_add_164'
+  Processing 'fir_baseline_DW01_add_165'
+  Processing 'fir_baseline_DW01_add_166'
+  Processing 'fir_baseline_DW01_add_167'
+  Processing 'fir_baseline_DW01_add_168'
+  Processing 'fir_baseline_DW01_add_169'
+  Processing 'fir_baseline_DW01_add_170'
+  Processing 'fir_baseline_DW01_add_171'
+  Processing 'fir_baseline_DW01_add_172'
+  Processing 'fir_baseline_DW01_sub_1'
+  Processing 'fir_baseline_DW01_add_173'
+  Processing 'fir_baseline_DW01_add_174'
+  Processing 'fir_baseline_DW01_add_175'
+  Processing 'fir_baseline_DW01_add_176'
+  Processing 'fir_baseline_DW01_add_177'
+  Processing 'fir_baseline_DW01_add_178'
+  Processing 'fir_baseline_DW01_add_179'
+  Processing 'fir_baseline_DW01_add_180'
+  Processing 'fir_baseline_DW01_add_181'
+  Processing 'fir_baseline_DW01_add_182'
+  Processing 'fir_baseline_DW01_add_183'
+  Processing 'fir_baseline_DW01_add_184'
+  Processing 'fir_baseline_DW01_add_185'
+  Processing 'fir_baseline_DW01_add_186'
+  Processing 'fir_baseline_DW01_add_187'
+  Processing 'fir_baseline_DW01_add_188'
+  Processing 'fir_baseline_DW01_add_189'
+  Processing 'fir_baseline_DW01_add_190'
+  Processing 'fir_baseline_DW01_add_191'
+  Processing 'fir_baseline_DW01_add_192'
+  Processing 'fir_baseline_DW01_add_193'
+  Processing 'fir_baseline_DW01_add_194'
+  Processing 'fir_baseline_DW01_add_195'
+  Processing 'fir_baseline_DW01_add_196'
+  Processing 'fir_baseline_DW01_add_197'
+  Processing 'fir_baseline_DW01_add_198'
+  Processing 'fir_baseline_DW01_add_199'
+  Processing 'fir_baseline_DW01_add_200'
+  Processing 'fir_baseline_DW01_add_201'
+  Processing 'fir_baseline_DW01_add_202'
+  Processing 'fir_baseline_DW01_add_203'
+  Processing 'fir_baseline_DW01_add_204'
+  Processing 'fir_baseline_DW01_add_205'
+  Processing 'fir_baseline_DW01_add_206'
+  Processing 'fir_baseline_DW01_add_207'
+  Processing 'fir_baseline_DW01_add_208'
+  Processing 'fir_baseline_DW01_add_209'
+  Processing 'fir_baseline_DW01_add_210'
+  Processing 'fir_baseline_DW01_add_211'
+  Processing 'fir_baseline_DW01_add_212'
+  Processing 'fir_baseline_DW01_add_213'
+  Processing 'fir_baseline_DW01_add_214'
+  Processing 'fir_baseline_DW01_add_215'
+  Mapping 'fir_baseline_DW_mult_tc_0'
+  Mapping 'fir_baseline_DW_mult_tc_1'
+  Mapping 'fir_baseline_DW_mult_tc_2'
+  Mapping 'fir_baseline_DW_mult_tc_3'
+  Mapping 'fir_baseline_DW_mult_tc_4'
+  Mapping 'fir_baseline_DW_mult_tc_5'
+  Mapping 'fir_baseline_DW_mult_tc_6'
+  Mapping 'fir_baseline_DW_mult_tc_7'
+  Mapping 'fir_baseline_DW_mult_tc_8'
+  Mapping 'fir_baseline_DW_mult_tc_9'
+  Mapping 'fir_baseline_DW_mult_tc_10'
+  Mapping 'fir_baseline_DW_mult_tc_11'
+  Mapping 'fir_baseline_DW_mult_tc_12'
+  Mapping 'fir_baseline_DW_mult_tc_13'
+  Mapping 'fir_baseline_DW_mult_tc_14'
+  Mapping 'fir_baseline_DW_mult_tc_15'
+  Mapping 'fir_baseline_DW_mult_tc_16'
+  Mapping 'fir_baseline_DW_mult_tc_17'
+  Mapping 'fir_baseline_DW_mult_tc_18'
+  Mapping 'fir_baseline_DW_mult_tc_19'
+  Mapping 'fir_baseline_DW_mult_tc_20'
+  Mapping 'fir_baseline_DW_mult_tc_21'
+  Mapping 'fir_baseline_DW_mult_tc_22'
+  Mapping 'fir_baseline_DW_mult_tc_23'
+  Mapping 'fir_baseline_DW_mult_tc_24'
+  Mapping 'fir_baseline_DW_mult_tc_25'
+  Mapping 'fir_baseline_DW_mult_tc_26'
+  Mapping 'fir_baseline_DW_mult_tc_27'
+  Mapping 'fir_baseline_DW_mult_tc_28'
+  Mapping 'fir_baseline_DW_mult_tc_29'
+  Mapping 'fir_baseline_DW_mult_tc_30'
+  Mapping 'fir_baseline_DW_mult_tc_31'
+  Mapping 'fir_baseline_DW_mult_tc_32'
+  Mapping 'fir_baseline_DW_mult_tc_33'
+  Mapping 'fir_baseline_DW_mult_tc_34'
+  Mapping 'fir_baseline_DW_mult_tc_35'
+  Mapping 'fir_baseline_DW_mult_tc_36'
+  Mapping 'fir_baseline_DW_mult_tc_37'
+  Mapping 'fir_baseline_DW_mult_tc_38'
+  Mapping 'fir_baseline_DW_mult_tc_39'
+  Mapping 'fir_baseline_DW_mult_tc_40'
+  Mapping 'fir_baseline_DW_mult_tc_41'
+  Mapping 'fir_baseline_DW_mult_tc_42'
+  Mapping 'fir_baseline_DW_mult_tc_43'
+  Mapping 'fir_baseline_DW_mult_tc_44'
+  Mapping 'fir_baseline_DW_mult_tc_45'
+  Mapping 'fir_baseline_DW_mult_tc_46'
+  Mapping 'fir_baseline_DW_mult_tc_47'
+  Mapping 'fir_baseline_DW_mult_tc_48'
+  Mapping 'fir_baseline_DW_mult_tc_49'
+  Mapping 'fir_baseline_DW_mult_tc_50'
+  Mapping 'fir_baseline_DW_mult_tc_51'
+  Mapping 'fir_baseline_DW_mult_tc_52'
+  Mapping 'fir_baseline_DW_mult_tc_53'
+  Mapping 'fir_baseline_DW_mult_tc_54'
+  Mapping 'fir_baseline_DW_mult_tc_55'
+  Mapping 'fir_baseline_DW_mult_tc_56'
+  Mapping 'fir_baseline_DW_mult_tc_57'
+  Mapping 'fir_baseline_DW_mult_tc_58'
+  Mapping 'fir_baseline_DW_mult_tc_59'
+  Mapping 'fir_baseline_DW_mult_tc_60'
+  Mapping 'fir_baseline_DW_mult_tc_61'
+  Mapping 'fir_baseline_DW_mult_tc_62'
+  Mapping 'fir_baseline_DW_mult_tc_63'
+  Mapping 'fir_baseline_DW_mult_tc_64'
+  Mapping 'fir_baseline_DW_mult_tc_65'
+  Mapping 'fir_baseline_DW_mult_tc_66'
+  Mapping 'fir_baseline_DW_mult_tc_67'
+  Mapping 'fir_baseline_DW_mult_tc_68'
+  Mapping 'fir_baseline_DW_mult_tc_69'
+  Mapping 'fir_baseline_DW_mult_tc_70'
+  Mapping 'fir_baseline_DW_mult_tc_71'
+  Mapping 'fir_baseline_DW_mult_tc_72'
+  Mapping 'fir_baseline_DW_mult_tc_73'
+  Mapping 'fir_baseline_DW_mult_tc_74'
+  Mapping 'fir_baseline_DW_mult_tc_75'
+  Mapping 'fir_baseline_DW_mult_tc_76'
+  Mapping 'fir_baseline_DW_mult_tc_77'
+  Mapping 'fir_baseline_DW_mult_tc_78'
+  Mapping 'fir_baseline_DW_mult_tc_79'
+  Mapping 'fir_baseline_DW_mult_tc_80'
+  Mapping 'fir_baseline_DW_mult_tc_81'
+  Mapping 'fir_baseline_DW_mult_tc_82'
+  Mapping 'fir_baseline_DW_mult_tc_83'
+  Mapping 'fir_baseline_DW_mult_tc_84'
+  Mapping 'fir_baseline_DW_mult_tc_85'
+  Mapping 'fir_baseline_DW_mult_tc_86'
+  Mapping 'fir_baseline_DW_mult_tc_87'
+  Mapping 'fir_baseline_DW_mult_tc_88'
+  Mapping 'fir_baseline_DW_mult_tc_89'
+  Mapping 'fir_baseline_DW_mult_tc_90'
+  Mapping 'fir_baseline_DW_mult_tc_91'
+  Mapping 'fir_baseline_DW_mult_tc_92'
+  Mapping 'fir_baseline_DW_mult_tc_93'
+  Mapping 'fir_baseline_DW_mult_tc_94'
+  Mapping 'fir_baseline_DW_mult_tc_95'
+  Mapping 'fir_baseline_DW_mult_tc_96'
+  Mapping 'fir_baseline_DW_mult_tc_97'
+  Mapping 'fir_baseline_DW_mult_tc_98'
+  Mapping 'fir_baseline_DW_mult_tc_99'
+  Mapping 'fir_baseline_DW_mult_tc_100'
+  Mapping 'fir_baseline_DW_mult_tc_101'
+  Mapping 'fir_baseline_DW_mult_tc_102'
+  Mapping 'fir_baseline_DW_mult_tc_103'
+  Mapping 'fir_baseline_DW_mult_tc_104'
+  Mapping 'fir_baseline_DW_mult_tc_105'
+  Mapping 'fir_baseline_DW_mult_tc_106'
+  Mapping 'fir_baseline_DW_mult_tc_107'
+  Mapping 'fir_baseline_DW_mult_tc_108'
+  Mapping 'fir_baseline_DW_mult_tc_109'
+  Mapping 'fir_baseline_DW_mult_tc_110'
+  Mapping 'fir_baseline_DW_mult_tc_111'
+  Mapping 'fir_baseline_DW_mult_tc_112'
+  Mapping 'fir_baseline_DW_mult_tc_113'
+  Mapping 'fir_baseline_DW_mult_tc_114'
+  Mapping 'fir_baseline_DW_mult_tc_115'
+  Mapping 'fir_baseline_DW_mult_tc_116'
+  Mapping 'fir_baseline_DW_mult_tc_117'
+  Mapping 'fir_baseline_DW_mult_tc_118'
+  Mapping 'fir_baseline_DW_mult_tc_119'
+  Mapping 'fir_baseline_DW_mult_tc_120'
+  Mapping 'fir_baseline_DW_mult_tc_121'
+  Mapping 'fir_baseline_DW_mult_tc_122'
+  Mapping 'fir_baseline_DW_mult_tc_123'
+  Mapping 'fir_baseline_DW_mult_tc_124'
+  Mapping 'fir_baseline_DW_mult_tc_125'
+  Mapping 'fir_baseline_DW_mult_tc_126'
+  Mapping 'fir_baseline_DW_mult_tc_127'
+  Mapping 'fir_baseline_DW_mult_tc_128'
+  Mapping 'fir_baseline_DW_mult_tc_129'
+  Mapping 'fir_baseline_DW_mult_tc_130'
+  Mapping 'fir_baseline_DW_mult_tc_131'
+  Mapping 'fir_baseline_DW_mult_tc_132'
+  Mapping 'fir_baseline_DW_mult_tc_133'
+  Mapping 'fir_baseline_DW_mult_tc_134'
+  Mapping 'fir_baseline_DW_mult_tc_135'
+  Mapping 'fir_baseline_DW_mult_tc_136'
+  Mapping 'fir_baseline_DW_mult_tc_137'
+  Mapping 'fir_baseline_DW_mult_tc_138'
+  Mapping 'fir_baseline_DW_mult_tc_139'
+  Mapping 'fir_baseline_DW_mult_tc_140'
+  Mapping 'fir_baseline_DW_mult_tc_141'
+  Mapping 'fir_baseline_DW_mult_tc_142'
+  Mapping 'fir_baseline_DW_mult_tc_143'
+  Mapping 'fir_baseline_DW_mult_tc_144'
+  Mapping 'fir_baseline_DW_mult_tc_145'
+  Mapping 'fir_baseline_DW_mult_tc_146'
+  Mapping 'fir_baseline_DW_mult_tc_147'
+  Mapping 'fir_baseline_DW_mult_tc_148'
+  Mapping 'fir_baseline_DW_mult_tc_149'
+  Mapping 'fir_baseline_DW_mult_tc_150'
+  Mapping 'fir_baseline_DW_mult_tc_151'
+  Mapping 'fir_baseline_DW_mult_tc_152'
+  Mapping 'fir_baseline_DW_mult_tc_153'
+  Mapping 'fir_baseline_DW_mult_tc_154'
+  Mapping 'fir_baseline_DW_mult_tc_155'
+  Mapping 'fir_baseline_DW_mult_tc_156'
+  Mapping 'fir_baseline_DW_mult_tc_157'
+  Mapping 'fir_baseline_DW_mult_tc_158'
+  Mapping 'fir_baseline_DW_mult_tc_159'
+  Mapping 'fir_baseline_DW_mult_tc_160'
+  Mapping 'fir_baseline_DW_mult_tc_161'
+  Mapping 'fir_baseline_DW_mult_tc_162'
+  Mapping 'fir_baseline_DW_mult_tc_163'
+  Mapping 'fir_baseline_DW_mult_tc_164'
+  Mapping 'fir_baseline_DW_mult_tc_165'
+  Mapping 'fir_baseline_DW_mult_tc_166'
+  Mapping 'fir_baseline_DW_mult_tc_167'
+  Mapping 'fir_baseline_DW_mult_tc_168'
+  Mapping 'fir_baseline_DW_mult_tc_169'
+  Mapping 'fir_baseline_DW_mult_tc_170'
+  Mapping 'fir_baseline_DW_mult_tc_171'
+  Mapping 'fir_baseline_DW_mult_tc_172'
+  Mapping 'fir_baseline_DW_mult_tc_173'
+  Mapping 'fir_baseline_DW_mult_tc_174'
+  Mapping 'fir_baseline_DW_mult_tc_175'
+  Mapping 'fir_baseline_DW_mult_tc_176'
+  Mapping 'fir_baseline_DW_mult_tc_177'
+  Mapping 'fir_baseline_DW_mult_tc_178'
+  Mapping 'fir_baseline_DW_mult_tc_179'
+  Mapping 'fir_baseline_DW_mult_tc_180'
+  Mapping 'fir_baseline_DW_mult_tc_181'
+  Mapping 'fir_baseline_DW_mult_tc_182'
+  Mapping 'fir_baseline_DW_mult_tc_183'
+  Mapping 'fir_baseline_DW_mult_tc_184'
+  Mapping 'fir_baseline_DW_mult_tc_185'
+  Mapping 'fir_baseline_DW_mult_tc_186'
+  Mapping 'fir_baseline_DW_mult_tc_187'
+  Mapping 'fir_baseline_DW_mult_tc_188'
+  Mapping 'fir_baseline_DW_mult_tc_189'
+  Mapping 'fir_baseline_DW_mult_tc_190'
+  Mapping 'fir_baseline_DW_mult_tc_191'
+  Mapping 'fir_baseline_DW_mult_tc_192'
+  Mapping 'fir_baseline_DW_mult_tc_193'
+  Mapping 'fir_baseline_DW_mult_tc_194'
+  Mapping 'fir_baseline_DW_mult_tc_195'
+  Mapping 'fir_baseline_DW_mult_tc_196'
+  Mapping 'fir_baseline_DW_mult_tc_197'
+  Mapping 'fir_baseline_DW_mult_tc_198'
+  Mapping 'fir_baseline_DW_mult_tc_199'
+  Mapping 'fir_baseline_DW_mult_tc_200'
+  Mapping 'fir_baseline_DW_mult_tc_201'
+  Mapping 'fir_baseline_DW_mult_tc_202'
+  Mapping 'fir_baseline_DW_mult_tc_203'
+  Mapping 'fir_baseline_DW_mult_tc_204'
+  Mapping 'fir_baseline_DW_mult_tc_205'
+  Mapping 'fir_baseline_DW_mult_tc_206'
+  Mapping 'fir_baseline_DW_mult_tc_207'
+  Mapping 'fir_baseline_DW_mult_tc_208'
+  Mapping 'fir_baseline_DW_mult_tc_209'
+  Mapping 'fir_baseline_DW_mult_tc_210'
+  Mapping 'fir_baseline_DW_mult_tc_211'
+  Mapping 'fir_baseline_DW_mult_tc_212'
+  Mapping 'fir_baseline_DW_mult_tc_213'
+  Processing 'fir_baseline_DW01_add_216'
+  Processing 'fir_baseline_DW01_add_217'
+  Processing 'fir_baseline_DW01_add_218'
+  Processing 'fir_baseline_DW01_add_219'
+  Mapping 'fir_baseline_DW_mult_tc_214'
+  Mapping 'fir_baseline_DW_mult_tc_215'
+  Processing 'fir_baseline_DW01_add_220'
+  Mapping 'fir_baseline_DW_mult_tc_216'
+  Mapping 'fir_baseline_DW_mult_tc_217'
+  Processing 'fir_baseline_DW01_add_221'
+  Processing 'fir_baseline_DW01_add_222'
+  Mapping 'fir_baseline_DW_mult_tc_218'
+  Mapping 'fir_baseline_DW_mult_tc_219'
+  Processing 'fir_baseline_DW01_add_223'
+  Mapping 'fir_baseline_DW_mult_tc_220'
+  Mapping 'fir_baseline_DW_mult_tc_221'
+  Processing 'fir_baseline_DW01_add_224'
+  Processing 'fir_baseline_DW01_add_225'
+  Processing 'fir_baseline_DW01_add_226'
+  Mapping 'fir_baseline_DW_mult_tc_222'
+  Mapping 'fir_baseline_DW_mult_tc_223'
+  Processing 'fir_baseline_DW01_add_227'
+  Mapping 'fir_baseline_DW_mult_tc_224'
+  Mapping 'fir_baseline_DW_mult_tc_225'
+  Processing 'fir_baseline_DW01_add_228'
+  Processing 'fir_baseline_DW01_add_229'
+  Mapping 'fir_baseline_DW_mult_tc_226'
+  Mapping 'fir_baseline_DW_mult_tc_227'
+  Processing 'fir_baseline_DW01_add_230'
+  Mapping 'fir_baseline_DW_mult_tc_228'
+  Mapping 'fir_baseline_DW_mult_tc_229'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'fir_baseline'. (DDB-72)
+Module: DW01_add_width39, Ports: 119, Input: 79, Output: 40, Inout: 0
+Module: DW01_add_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width31, Ports: 95, Input: 63, Output: 32, Inout: 0
+Module: DW01_add_width31, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width37, Ports: 113, Input: 75, Output: 38, Inout: 0
+Module: DW01_add_width37, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width30, Ports: 92, Input: 61, Output: 31, Inout: 0
+Module: DW01_add_width30, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width35, Ports: 107, Input: 71, Output: 36, Inout: 0
+Module: DW01_add_width35, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width34, Ports: 104, Input: 69, Output: 35, Inout: 0
+Module: DW01_add_width34, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width33, Ports: 101, Input: 67, Output: 34, Inout: 0
+Module: DW01_add_width33, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width27, Ports: 83, Input: 55, Output: 28, Inout: 0
+Module: DW01_add_width27, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width28, Ports: 86, Input: 57, Output: 29, Inout: 0
+Module: DW01_add_width28, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width36, Ports: 110, Input: 73, Output: 37, Inout: 0
+Module: DW01_add_width36, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width29, Ports: 89, Input: 59, Output: 30, Inout: 0
+Module: DW01_add_width29, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width38, Ports: 116, Input: 77, Output: 39, Inout: 0
+Module: DW01_add_width38, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width39, Ports: 119, Input: 79, Output: 40, Inout: 0
+Module: DW01_sub_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:04:55  476330.0     49.26     779.5       0.0                          
+    0:04:55  476279.0     50.27     792.9       0.0                          
+    0:04:55  476279.0     50.27     792.9       0.0                          
+    0:04:55  476279.0     50.27     792.9       0.0                          
+    0:04:57  476279.0     50.27     792.9       0.0                          
+    0:05:38  346342.0     53.05     830.6       0.0                          
+    0:05:57  359577.0     50.73     797.0       0.0                          
+    0:06:01  357539.0     49.85     783.1       0.0                          
+    0:06:03  357842.0     49.80     782.4       0.0                          
+    0:06:04  357788.0     49.79     782.3       0.0                          
+    0:06:05  357819.0     49.79     782.3       0.0                          
+    0:06:06  357790.0     49.79     782.3       0.0                          
+    0:06:08  357817.0     49.79     782.3       0.0                          
+    0:06:09  357790.0     49.79     782.3       0.0                          
+    0:06:10  357817.0     49.79     782.3       0.0                          
+    0:06:10  357817.0     49.79     782.3       0.0                          
+    0:06:11  357802.0     49.79     782.3       0.0                          
+    0:06:11  357802.0     49.79     782.3       0.0                          
+    0:06:12  357802.0     49.79     782.3       0.0                          
+    0:06:12  357802.0     49.79     782.3       0.0                          
+    0:06:12  357802.0     49.79     782.3       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:06:12  357802.0     49.79     782.3       0.0                          
+    0:06:12  357802.0     49.79     782.3       0.0                          
+    0:06:12  357802.0     49.79     782.3       0.0                          
+    0:06:15  358337.0     48.13     758.1       0.0 y_out_reg[14]/D          
+    0:06:15  358606.0     47.83     753.7       0.0 y_out_reg[14]/D          
+    0:06:17  358609.0     47.77     752.6       0.0 y_out_reg[14]/D          
+    0:06:17  358648.0     47.26     750.6       0.0 y_out_reg[0]/D           
+    0:06:18  358681.0     47.19     748.2       0.0 y_out_reg[1]/D           
+    0:06:18  358722.0     47.15     747.5       0.0 y_out_reg[0]/D           
+    0:06:18  358782.0     47.09     746.5       0.0 y_out_reg[0]/D           
+    0:06:18  358805.0     47.05     745.4       0.0 y_out_reg[0]/D           
+    0:06:19  358836.0     46.95     745.0       0.0 y_out_reg[14]/D          
+    0:06:20  358869.0     46.91     744.3       0.0 y_out_reg[14]/D          
+    0:06:20  358898.0     46.88     743.8       0.0 y_out_reg[14]/D          
+    0:06:20  358902.0     46.87     743.7       0.0 y_out_reg[14]/D          
+    0:06:21  358918.0     46.83     743.4       0.0 y_out_reg[14]/D          
+    0:06:21  358930.0     46.82     743.4       0.0 y_out_reg[14]/D          
+    0:06:22  358940.0     46.78     743.1       0.0 y_out_reg[14]/D          
+    0:06:24  358955.0     46.66     742.2       0.0 y_out_reg[0]/D           
+    0:06:25  358983.0     46.58     741.4       0.0 y_out_reg[1]/D           
+    0:06:29  358982.0     46.45     739.7       0.0 y_out_reg[14]/D          
+    0:06:29  358985.0     46.43     739.5       0.0 y_out_reg[14]/D          
+    0:06:30  358984.0     46.40     737.1       0.0 y_out_reg[1]/D           
+    0:06:31  358985.0     46.34     738.2       0.0 y_out_reg[1]/D           
+    0:06:32  358987.0     46.33     737.9       0.0 y_out_reg[1]/D           
+    0:06:33  358987.0     46.30     737.7       0.0                          
+    0:06:33  358983.0     46.30     737.7       0.0                          
+    0:06:34  358983.0     46.30     737.2       0.0                          
+    0:06:34  358993.0     46.30     736.8       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:06:34  358993.0     46.30     736.8       0.0                          
+    0:06:34  358993.0     46.30     736.8       0.0                          
+    0:06:37  357799.0     46.30     737.1       0.0                          
+    0:06:38  357481.0     46.30     737.1       0.0                          
+    0:06:39  357395.0     46.30     737.1       0.0                          
+    0:06:39  357366.0     46.30     737.1       0.0                          
+    0:06:39  357355.0     46.30     737.1       0.0                          
+    0:06:39  357355.0     46.30     737.1       0.0                          
+    0:06:40  357349.0     46.30     737.1       0.0                          
+    0:06:43  357055.0     46.28     736.9       0.0                          
+    0:06:43  357029.0     46.28     736.9       0.0                          
+    0:06:43  357028.0     46.28     736.9       0.0                          
+    0:06:43  357028.0     46.28     736.9       0.0                          
+    0:06:43  357028.0     46.28     736.9       0.0                          
+    0:06:44  357028.0     46.28     736.9       0.0                          
+    0:06:44  357028.0     46.28     736.9       0.0                          
+    0:06:44  357028.0     46.28     736.9       0.0                          
+    0:06:45  357222.0     46.07     734.2       0.0                          
+    0:06:45  357220.0     46.04     734.0       0.0                          
+    0:06:45  357207.0     46.04     734.0       0.0                          
+    0:06:45  357207.0     46.04     733.3       0.0                          
+    0:06:46  357209.0     46.04     733.0       0.0                          
+    0:06:46  357213.0     46.04     732.8       0.0                          
+    0:06:46  357213.0     46.02     732.7       0.0 y_out_reg[1]/D           
+Loading db file '/cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'fir_baseline' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 3728 load(s), 1 driver(s)
+     Net 'rst_n': 3728 load(s), 1 driver(s)
+CPU Load: 7%, Ram Free: 129 GB, Swap Free: 7 GB, Work Disk Free: 287 GB, Tmp Disk Free: 66 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+report_qor                 > reports/${DESIGN}_qor.rpt
+report_area                > reports/${DESIGN}_area.rpt
+report_timing -max_paths 5 > reports/${DESIGN}_timing.rpt
+report_power               > reports/${DESIGN}_power.rpt
+change_names -rules verilog -hier
+1
+write -hierarchy -format verilog -output netlist/${DESIGN}_syn.v
+Writing verilog file '/home/chome/chuani/fir_dc/netlist/fir_baseline_syn.v'.
+1
+write -format ddc -hierarchy -output ddc/${DESIGN}.ddc
+Writing ddc file 'ddc/fir_baseline.ddc'.
+1
+quit
+
+Memory usage for this session 825 Mbytes.
+Memory usage for this session including child processes 825 Mbytes.
+CPU usage for this session 389 seconds ( 0.11 hours ).
+Elapsed time for this session 441 seconds ( 0.12 hours ).
+
+Thank you...
