@@ -1,0 +1,5 @@
+set_app_var search_path [concat $search_path ./rtl ./include ./matlab_exports]
+set_app_var target_library /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db
+set_app_var synthetic_library /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/dw_foundation.sldb
+set_app_var link_library "* $target_library $synthetic_library"
+alias h history
