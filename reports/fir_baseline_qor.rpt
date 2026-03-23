@@ -1,0 +1,85 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'fir_baseline' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : qor
+Design : fir_baseline
+Version: W-2024.09-SP2
+Date   : Wed Mar 18 20:25:27 2026
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              58.00
+  Critical Path Length:         55.17
+  Critical Path Slack:         -46.02
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:       -732.74
+  No. of Violating Paths:       16.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        461
+  Hierarchical Port Count:      40681
+  Leaf Cell Count:             112363
+  Buf/Inv Cell Count:           10847
+  Buf Cell Count:                2895
+  Inv Cell Count:               10847
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:    108635
+  Sequential Cell Count:         3728
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   321652.000000
+  Noncombinational Area: 35561.000000
+  Buf/Inv Area:          14055.000000
+  Total Buffer Area:          3785.00
+  Total Inverter Area:       14055.00
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:            357213.000000
+  Design Area:          357213.000000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:        122291
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: ts3.ecse.rpi.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                   36.34
+  Logic Optimization:                200.81
+  Mapping Optimization:              118.46
+  -----------------------------------------
+  Overall Compile Time:              362.02
+  Overall Compile Wall Clock Time:   411.03
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 46.02  TNS: 732.74  Number of Violating Paths: 16
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

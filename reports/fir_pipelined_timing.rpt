@@ -1,0 +1,210 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : fir_pipelined
+Version: W-2024.09-SP2
+Date   : Wed Mar 18 21:37:15 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: DP_OP_933J1_126_7632/R_105247
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DP_OP_933J1_126_7632/R_85525_RW_22
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DP_OP_933J1_126_7632/R_105247/CP (FD4P)                 0.00 #     0.00 r
+  DP_OP_933J1_126_7632/R_105247/Q (FD4P)                  1.75       1.75 f
+  U6708/S (FA1A)                                          2.28       4.03 r
+  U12741/CO (FA1AP)                                       1.08       5.12 r
+  U12723/S (FA1A)                                         1.04       6.15 r
+  U12726/S (FA1AP)                                        2.03       8.19 f
+  U12812/CO (FA1AP)                                       1.23       9.42 f
+  U5429/CO (FA1A)                                         1.17      10.59 f
+  U12874/S (FA1AP)                                        2.18      12.78 r
+  U13310/S (FA1AP)                                        2.18      14.96 r
+  U12914/S (FA1AP)                                        2.18      17.14 r
+  U13260/S (FA1AP)                                        1.08      18.23 r
+  U13265/S (FA1AP)                                        1.08      19.31 r
+  U13266/S (FA1A)                                         1.04      20.35 r
+  DP_OP_933J1_126_7632/R_85525_RW_22/D (FD2)              0.00      20.35 r
+  data arrival time                                                 20.35
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  DP_OP_933J1_126_7632/R_85525_RW_22/CP (FD2)             0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -20.35
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -11.20
+
+
+  Startpoint: DP_OP_932J1_125_7632/R_9356
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DP_OP_932J1_125_7632/R_90818_RW_11
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DP_OP_932J1_125_7632/R_9356/CP (FD4P)                   0.00 #     0.00 r
+  DP_OP_932J1_125_7632/R_9356/Q (FD4P)                    1.54       1.54 f
+  U5318/S (FA1AP)                                         2.11       3.66 r
+  U5525/S (FA1AP)                                         2.11       5.77 r
+  U21772/S (FA1AP)                                        2.18       7.95 r
+  U21773/S (FA1AP)                                        1.08       9.03 r
+  U21813/S (FA1AP)                                        1.01      10.05 r
+  U21835/S (FA1AP)                                        2.18      12.23 r
+  U21834/S (FA1AP)                                        2.18      14.41 r
+  U21842/S (FA1AP)                                        1.08      15.50 r
+  U21843/S (FA1AP)                                        1.01      16.51 r
+  U21846/S (FA1AP)                                        2.33      18.84 r
+  U5899/S (FA1P)                                          0.81      19.65 f
+  U21847/Z (NR2P)                                         0.69      20.34 r
+  DP_OP_932J1_125_7632/R_90818_RW_11/D (FD2)              0.00      20.34 r
+  data arrival time                                                 20.34
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  DP_OP_932J1_125_7632/R_90818_RW_11/CP (FD2)             0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -20.34
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -11.19
+
+
+  Startpoint: DP_OP_932J1_125_7632/R_9356
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DP_OP_932J1_125_7632/R_98147_RW_2
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DP_OP_932J1_125_7632/R_9356/CP (FD4P)                   0.00 #     0.00 r
+  DP_OP_932J1_125_7632/R_9356/Q (FD4P)                    1.54       1.54 f
+  U5318/S (FA1AP)                                         2.11       3.66 r
+  U5525/S (FA1AP)                                         2.11       5.77 r
+  U21772/S (FA1AP)                                        2.18       7.95 r
+  U21773/S (FA1AP)                                        1.08       9.03 r
+  U21813/S (FA1AP)                                        1.01      10.05 r
+  U21835/S (FA1AP)                                        2.18      12.23 r
+  U21834/S (FA1AP)                                        2.18      14.41 r
+  U21842/S (FA1AP)                                        1.08      15.50 r
+  U21843/S (FA1AP)                                        1.01      16.51 r
+  U21846/S (FA1AP)                                        2.33      18.84 r
+  U5899/S (FA1P)                                          0.81      19.65 f
+  U7135/Z (ND2)                                           0.64      20.29 r
+  DP_OP_932J1_125_7632/R_98147_RW_2/D (FD4)               0.00      20.29 r
+  data arrival time                                                 20.29
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  DP_OP_932J1_125_7632/R_98147_RW_2/CP (FD4)              0.00      10.00 r
+  library setup time                                     -0.90       9.10
+  data required time                                                 9.10
+  --------------------------------------------------------------------------
+  data required time                                                 9.10
+  data arrival time                                                -20.29
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -11.19
+
+
+  Startpoint: DP_OP_930J1_123_7632/R_100173
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: R_109118 (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DP_OP_930J1_123_7632/R_100173/CP (FD2)                  0.00 #     0.00 r
+  DP_OP_930J1_123_7632/R_100173/QN (FD2)                  1.77       1.77 f
+  U5646/CO (FA1A)                                         2.21       3.98 f
+  U11041/CO (FA1AP)                                       2.33       6.31 f
+  U11833/S (FA1AP)                                        1.01       7.33 r
+  U11865/S (FA1AP)                                        2.18       9.51 r
+  U11872/S (FA1AP)                                        2.11      11.62 r
+  U11879/S (FA1AP)                                        2.11      13.73 r
+  U11987/S (FA1AP)                                        2.11      15.84 r
+  U11990/CO (FA1AP)                                       2.26      18.10 r
+  U6313/S (FA1P)                                          2.18      20.28 r
+  R_109118/D (FD4)                                        0.00      20.28 r
+  data arrival time                                                 20.28
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  R_109118/CP (FD4)                                       0.00      10.00 r
+  library setup time                                     -0.90       9.10
+  data required time                                                 9.10
+  --------------------------------------------------------------------------
+  data required time                                                 9.10
+  data arrival time                                                -20.28
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -11.18
+
+
+  Startpoint: DP_OP_930J1_123_7632/R_101191
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: R_109117 (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DP_OP_930J1_123_7632/R_101191/CP (FD4P)                 0.00 #     0.00 r
+  DP_OP_930J1_123_7632/R_101191/Q (FD4P)                  1.58       1.58 f
+  U11647/S (FA1AP)                                        2.18       3.76 r
+  U5565/S (FA1AP)                                         2.18       5.95 r
+  U11834/S (FA1AP)                                        2.11       8.06 r
+  U11859/S (FA1AP)                                        2.18      10.24 r
+  U11869/S (FA1AP)                                        2.11      12.35 r
+  U11880/S (FA1AP)                                        2.11      14.47 r
+  U11883/S (FA1AP)                                        2.18      16.65 r
+  U11989/S (FA1AP)                                        1.08      17.73 r
+  U674/S (FA1A)                                           1.02      18.75 f
+  U6313/CO (FA1P)                                         1.53      20.28 f
+  R_109117/D (FD4)                                        0.00      20.28 f
+  data arrival time                                                 20.28
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  R_109117/CP (FD4)                                       0.00      10.00 r
+  library setup time                                     -0.90       9.10
+  data required time                                                 9.10
+  --------------------------------------------------------------------------
+  data required time                                                 9.10
+  data arrival time                                                -20.28
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -11.18
+
+
+1

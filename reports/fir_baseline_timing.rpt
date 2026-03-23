@@ -1,0 +1,640 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : fir_baseline
+Version: W-2024.09-SP2
+Date   : Wed Mar 18 20:25:28 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: x_delay_reg[157][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_out_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  x_delay_reg[157][3]/CP (FD2P)                           0.00 #     0.00 r
+  x_delay_reg[157][3]/Q (FD2P)                            2.13       2.13 r
+  mult_39_I158/a[3] (fir_baseline_DW_mult_tc_790)         0.00       2.13 r
+  mult_39_I158/U615/S (FA1A)                              2.43       4.56 r
+  mult_39_I158/U565/Z (EO)                                1.13       5.68 f
+  mult_39_I158/U564/Z (EO)                                1.26       6.94 f
+  mult_39_I158/product[5] (fir_baseline_DW_mult_tc_790)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/A[5] (fir_baseline_DW01_add_993)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/U219/Z (NR2)        1.59       8.52 r
+  add_179_root_add_2_root_add_39_I232/U462/Z (MUX21L)     0.89       9.41 r
+  add_179_root_add_2_root_add_39_I232/U412/Z (MUX21L)     0.53       9.94 f
+  add_179_root_add_2_root_add_39_I232/U414/Z (MUX21L)     0.96      10.90 r
+  add_179_root_add_2_root_add_39_I232/U410/Z (MUX21H)     1.06      11.95 r
+  add_179_root_add_2_root_add_39_I232/U286/Z (MUX21LP)
+                                                          1.03      12.98 r
+  add_179_root_add_2_root_add_39_I232/U285/Z (MUX21LP)
+                                                          1.06      14.04 r
+  add_179_root_add_2_root_add_39_I232/U279/Z (MUX21LP)
+                                                          0.86      14.90 f
+  add_179_root_add_2_root_add_39_I232/U302/Z (IVP)        0.56      15.45 r
+  add_179_root_add_2_root_add_39_I232/U288/Z (EOP)        1.17      16.62 f
+  add_179_root_add_2_root_add_39_I232/SUM[15] (fir_baseline_DW01_add_993)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/B[15] (fir_baseline_DW01_add_995)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/U314/Z (OR2P)        1.08      17.70 f
+  add_79_root_add_2_root_add_39_I232/U305/Z (MUX21LP)     0.99      18.70 r
+  add_79_root_add_2_root_add_39_I232/U445/Z (MUX21L)      0.89      19.59 r
+  add_79_root_add_2_root_add_39_I232/U444/Z (MUX21L)      0.63      20.22 f
+  add_79_root_add_2_root_add_39_I232/U302/Z (IV)          0.81      21.03 r
+  add_79_root_add_2_root_add_39_I232/U387/Z (EO)          1.32      22.35 f
+  add_79_root_add_2_root_add_39_I232/SUM[18] (fir_baseline_DW01_add_995)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/A[18] (fir_baseline_DW01_add_994)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/U294/Z (NR2P)        1.07      23.42 r
+  add_49_root_add_2_root_add_39_I232/U447/Z (MUX21L)      0.89      24.32 r
+  add_49_root_add_2_root_add_39_I232/U110/Z (MUX21LP)     0.59      24.91 f
+  add_49_root_add_2_root_add_39_I232/U279/Z (IVAP)        0.36      25.27 r
+  add_49_root_add_2_root_add_39_I232/U300/Z (EOP)         1.17      26.44 f
+  add_49_root_add_2_root_add_39_I232/SUM[20] (fir_baseline_DW01_add_994)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/A[20] (fir_baseline_DW01_add_873)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/U363/Z (OR2P)        1.08      27.52 f
+  add_24_root_add_2_root_add_39_I232/U423/Z (MUX21L)      0.49      28.01 r
+  add_24_root_add_2_root_add_39_I232/U328/Z (MUX21LP)     0.53      28.53 f
+  add_24_root_add_2_root_add_39_I232/U362/Z (MUX21LP)     1.03      29.56 r
+  add_24_root_add_2_root_add_39_I232/U353/Z (MUX21LP)     1.09      30.65 r
+  add_24_root_add_2_root_add_39_I232/U335/Z (IVAP)        0.31      30.97 f
+  add_24_root_add_2_root_add_39_I232/U127/Z (EOP)         1.21      32.18 f
+  add_24_root_add_2_root_add_39_I232/SUM[25] (fir_baseline_DW01_add_873)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/A[25] (fir_baseline_DW01_add_996)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/U554/Z (NR2P)        1.07      33.25 r
+  add_11_root_add_2_root_add_39_I232/U121/Z (MUX21LP)     0.43      33.68 f
+  add_11_root_add_2_root_add_39_I232/U117/Z (MUX21LP)     0.66      34.34 r
+  add_11_root_add_2_root_add_39_I232/U337/Z (IVP)         0.26      34.60 f
+  add_11_root_add_2_root_add_39_I232/U460/Z (EOP)         1.17      35.77 f
+  add_11_root_add_2_root_add_39_I232/SUM[26] (fir_baseline_DW01_add_996)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/B[26] (fir_baseline_DW01_add_715)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/U336/Z (OR2P)         1.08      36.85 f
+  add_5_root_add_2_root_add_39_I232/U506/Z (MUX21L)       0.96      37.80 r
+  add_5_root_add_2_root_add_39_I232/U503/Z (MUX21L)       0.89      38.70 r
+  add_5_root_add_2_root_add_39_I232/U84/Z (MUX21LP)       0.59      39.29 f
+  add_5_root_add_2_root_add_39_I232/U329/Z (IVAP)         0.36      39.65 r
+  add_5_root_add_2_root_add_39_I232/U375/Z (EOP)          1.21      40.86 f
+  add_5_root_add_2_root_add_39_I232/SUM[29] (fir_baseline_DW01_add_715)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/B[29] (fir_baseline_DW01_add_719)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/U358/Z (NR2P)         1.07      41.93 r
+  add_2_root_add_2_root_add_39_I232/U388/Z (MUX21L)       0.47      42.41 f
+  add_2_root_add_2_root_add_39_I232/U77/Z (MUX21LP)       0.63      43.03 r
+  add_2_root_add_2_root_add_39_I232/U56/Z (MUX21LP)       1.03      44.06 r
+  add_2_root_add_2_root_add_39_I232/U41/Z (MUX21LP)       1.16      45.22 r
+  add_2_root_add_2_root_add_39_I232/U36/Z (EOP)           1.21      46.43 f
+  add_2_root_add_2_root_add_39_I232/SUM[34] (fir_baseline_DW01_add_719)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/A[34] (fir_baseline_DW01_add_712)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/U319/Z (AN2)          0.93      47.36 f
+  add_0_root_add_2_root_add_39_I232/U357/Z (MUX21L)       0.96      48.31 r
+  add_0_root_add_2_root_add_39_I232/U375/Z (MUX21L)       0.89      49.20 r
+  add_0_root_add_2_root_add_39_I232/U327/Z (MUX21LP)      0.46      49.66 f
+  add_0_root_add_2_root_add_39_I232/U6/Z (EOP)            1.19      50.86 f
+  add_0_root_add_2_root_add_39_I232/SUM[37] (fir_baseline_DW01_add_712)
+                                                          0.00      50.86 f
+  U84/Z (IVA)                                             0.31      51.17 r
+  U96/Z (ND8)                                             1.63      52.80 f
+  U91/Z (ND2P)                                            0.69      53.48 r
+  U177/Z (EO1)                                            1.05      54.54 f
+  U178/Z (ND2)                                            0.64      55.17 r
+  y_out_reg[1]/D (FD2)                                    0.00      55.17 r
+  data arrival time                                                 55.17
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  y_out_reg[1]/CP (FD2)                                   0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -55.17
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -46.02
+
+
+  Startpoint: x_delay_reg[157][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_out_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  x_delay_reg[157][3]/CP (FD2P)                           0.00 #     0.00 r
+  x_delay_reg[157][3]/Q (FD2P)                            2.13       2.13 r
+  mult_39_I158/a[3] (fir_baseline_DW_mult_tc_790)         0.00       2.13 r
+  mult_39_I158/U615/S (FA1A)                              2.43       4.56 r
+  mult_39_I158/U565/Z (EO)                                1.13       5.68 f
+  mult_39_I158/U564/Z (EO)                                1.26       6.94 f
+  mult_39_I158/product[5] (fir_baseline_DW_mult_tc_790)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/A[5] (fir_baseline_DW01_add_993)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/U219/Z (NR2)        1.59       8.52 r
+  add_179_root_add_2_root_add_39_I232/U462/Z (MUX21L)     0.89       9.41 r
+  add_179_root_add_2_root_add_39_I232/U412/Z (MUX21L)     0.53       9.94 f
+  add_179_root_add_2_root_add_39_I232/U414/Z (MUX21L)     0.96      10.90 r
+  add_179_root_add_2_root_add_39_I232/U410/Z (MUX21H)     1.06      11.95 r
+  add_179_root_add_2_root_add_39_I232/U286/Z (MUX21LP)
+                                                          1.03      12.98 r
+  add_179_root_add_2_root_add_39_I232/U285/Z (MUX21LP)
+                                                          1.06      14.04 r
+  add_179_root_add_2_root_add_39_I232/U279/Z (MUX21LP)
+                                                          0.86      14.90 f
+  add_179_root_add_2_root_add_39_I232/U302/Z (IVP)        0.56      15.45 r
+  add_179_root_add_2_root_add_39_I232/U288/Z (EOP)        1.17      16.62 f
+  add_179_root_add_2_root_add_39_I232/SUM[15] (fir_baseline_DW01_add_993)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/B[15] (fir_baseline_DW01_add_995)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/U314/Z (OR2P)        1.08      17.70 f
+  add_79_root_add_2_root_add_39_I232/U305/Z (MUX21LP)     0.99      18.70 r
+  add_79_root_add_2_root_add_39_I232/U445/Z (MUX21L)      0.89      19.59 r
+  add_79_root_add_2_root_add_39_I232/U444/Z (MUX21L)      0.63      20.22 f
+  add_79_root_add_2_root_add_39_I232/U302/Z (IV)          0.81      21.03 r
+  add_79_root_add_2_root_add_39_I232/U387/Z (EO)          1.32      22.35 f
+  add_79_root_add_2_root_add_39_I232/SUM[18] (fir_baseline_DW01_add_995)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/A[18] (fir_baseline_DW01_add_994)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/U294/Z (NR2P)        1.07      23.42 r
+  add_49_root_add_2_root_add_39_I232/U447/Z (MUX21L)      0.89      24.32 r
+  add_49_root_add_2_root_add_39_I232/U110/Z (MUX21LP)     0.59      24.91 f
+  add_49_root_add_2_root_add_39_I232/U279/Z (IVAP)        0.36      25.27 r
+  add_49_root_add_2_root_add_39_I232/U300/Z (EOP)         1.17      26.44 f
+  add_49_root_add_2_root_add_39_I232/SUM[20] (fir_baseline_DW01_add_994)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/A[20] (fir_baseline_DW01_add_873)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/U363/Z (OR2P)        1.08      27.52 f
+  add_24_root_add_2_root_add_39_I232/U423/Z (MUX21L)      0.49      28.01 r
+  add_24_root_add_2_root_add_39_I232/U328/Z (MUX21LP)     0.53      28.53 f
+  add_24_root_add_2_root_add_39_I232/U362/Z (MUX21LP)     1.03      29.56 r
+  add_24_root_add_2_root_add_39_I232/U353/Z (MUX21LP)     1.09      30.65 r
+  add_24_root_add_2_root_add_39_I232/U335/Z (IVAP)        0.31      30.97 f
+  add_24_root_add_2_root_add_39_I232/U127/Z (EOP)         1.21      32.18 f
+  add_24_root_add_2_root_add_39_I232/SUM[25] (fir_baseline_DW01_add_873)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/A[25] (fir_baseline_DW01_add_996)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/U554/Z (NR2P)        1.07      33.25 r
+  add_11_root_add_2_root_add_39_I232/U121/Z (MUX21LP)     0.43      33.68 f
+  add_11_root_add_2_root_add_39_I232/U117/Z (MUX21LP)     0.66      34.34 r
+  add_11_root_add_2_root_add_39_I232/U337/Z (IVP)         0.26      34.60 f
+  add_11_root_add_2_root_add_39_I232/U460/Z (EOP)         1.17      35.77 f
+  add_11_root_add_2_root_add_39_I232/SUM[26] (fir_baseline_DW01_add_996)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/B[26] (fir_baseline_DW01_add_715)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/U336/Z (OR2P)         1.08      36.85 f
+  add_5_root_add_2_root_add_39_I232/U506/Z (MUX21L)       0.96      37.80 r
+  add_5_root_add_2_root_add_39_I232/U503/Z (MUX21L)       0.89      38.70 r
+  add_5_root_add_2_root_add_39_I232/U84/Z (MUX21LP)       0.59      39.29 f
+  add_5_root_add_2_root_add_39_I232/U329/Z (IVAP)         0.36      39.65 r
+  add_5_root_add_2_root_add_39_I232/U375/Z (EOP)          1.21      40.86 f
+  add_5_root_add_2_root_add_39_I232/SUM[29] (fir_baseline_DW01_add_715)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/B[29] (fir_baseline_DW01_add_719)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/U358/Z (NR2P)         1.07      41.93 r
+  add_2_root_add_2_root_add_39_I232/U388/Z (MUX21L)       0.47      42.41 f
+  add_2_root_add_2_root_add_39_I232/U77/Z (MUX21LP)       0.63      43.03 r
+  add_2_root_add_2_root_add_39_I232/U56/Z (MUX21LP)       1.03      44.06 r
+  add_2_root_add_2_root_add_39_I232/U41/Z (MUX21LP)       1.16      45.22 r
+  add_2_root_add_2_root_add_39_I232/U36/Z (EOP)           1.21      46.43 f
+  add_2_root_add_2_root_add_39_I232/SUM[34] (fir_baseline_DW01_add_719)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/A[34] (fir_baseline_DW01_add_712)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/U319/Z (AN2)          0.93      47.36 f
+  add_0_root_add_2_root_add_39_I232/U357/Z (MUX21L)       0.96      48.31 r
+  add_0_root_add_2_root_add_39_I232/U15/Z (EOP)           0.98      49.30 r
+  add_0_root_add_2_root_add_39_I232/U331/Z (MUX21LP)      0.49      49.79 f
+  add_0_root_add_2_root_add_39_I232/SUM[36] (fir_baseline_DW01_add_712)
+                                                          0.00      49.79 f
+  U123/Z (ND2P)                                           0.62      50.41 r
+  U72/Y (IVDAP)                                           0.30      50.71 f
+  U74/Z (ND2P)                                            0.56      51.27 r
+  U158/Z (AN2P)                                           0.68      51.96 r
+  U101/Z (MUX21LP)                                        0.56      52.52 f
+  U97/Z (NR2)                                             0.81      53.32 r
+  U83/Z (AN3)                                             0.98      54.31 r
+  U81/Z (NR2P)                                            0.23      54.53 f
+  U127/Z (AO7P)                                           0.63      55.16 r
+  y_out_reg[14]/D (FD2)                                   0.00      55.16 r
+  data arrival time                                                 55.16
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  y_out_reg[14]/CP (FD2)                                  0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -55.16
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -46.01
+
+
+  Startpoint: x_delay_reg[157][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  x_delay_reg[157][3]/CP (FD2P)                           0.00 #     0.00 r
+  x_delay_reg[157][3]/Q (FD2P)                            2.13       2.13 r
+  mult_39_I158/a[3] (fir_baseline_DW_mult_tc_790)         0.00       2.13 r
+  mult_39_I158/U615/S (FA1A)                              2.43       4.56 r
+  mult_39_I158/U565/Z (EO)                                1.13       5.68 f
+  mult_39_I158/U564/Z (EO)                                1.26       6.94 f
+  mult_39_I158/product[5] (fir_baseline_DW_mult_tc_790)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/A[5] (fir_baseline_DW01_add_993)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/U219/Z (NR2)        1.59       8.52 r
+  add_179_root_add_2_root_add_39_I232/U462/Z (MUX21L)     0.89       9.41 r
+  add_179_root_add_2_root_add_39_I232/U412/Z (MUX21L)     0.53       9.94 f
+  add_179_root_add_2_root_add_39_I232/U414/Z (MUX21L)     0.96      10.90 r
+  add_179_root_add_2_root_add_39_I232/U410/Z (MUX21H)     1.06      11.95 r
+  add_179_root_add_2_root_add_39_I232/U286/Z (MUX21LP)
+                                                          1.03      12.98 r
+  add_179_root_add_2_root_add_39_I232/U285/Z (MUX21LP)
+                                                          1.06      14.04 r
+  add_179_root_add_2_root_add_39_I232/U279/Z (MUX21LP)
+                                                          0.86      14.90 f
+  add_179_root_add_2_root_add_39_I232/U302/Z (IVP)        0.56      15.45 r
+  add_179_root_add_2_root_add_39_I232/U288/Z (EOP)        1.17      16.62 f
+  add_179_root_add_2_root_add_39_I232/SUM[15] (fir_baseline_DW01_add_993)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/B[15] (fir_baseline_DW01_add_995)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/U314/Z (OR2P)        1.08      17.70 f
+  add_79_root_add_2_root_add_39_I232/U305/Z (MUX21LP)     0.99      18.70 r
+  add_79_root_add_2_root_add_39_I232/U445/Z (MUX21L)      0.89      19.59 r
+  add_79_root_add_2_root_add_39_I232/U444/Z (MUX21L)      0.63      20.22 f
+  add_79_root_add_2_root_add_39_I232/U302/Z (IV)          0.81      21.03 r
+  add_79_root_add_2_root_add_39_I232/U387/Z (EO)          1.32      22.35 f
+  add_79_root_add_2_root_add_39_I232/SUM[18] (fir_baseline_DW01_add_995)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/A[18] (fir_baseline_DW01_add_994)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/U294/Z (NR2P)        1.07      23.42 r
+  add_49_root_add_2_root_add_39_I232/U447/Z (MUX21L)      0.89      24.32 r
+  add_49_root_add_2_root_add_39_I232/U110/Z (MUX21LP)     0.59      24.91 f
+  add_49_root_add_2_root_add_39_I232/U279/Z (IVAP)        0.36      25.27 r
+  add_49_root_add_2_root_add_39_I232/U300/Z (EOP)         1.17      26.44 f
+  add_49_root_add_2_root_add_39_I232/SUM[20] (fir_baseline_DW01_add_994)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/A[20] (fir_baseline_DW01_add_873)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/U363/Z (OR2P)        1.08      27.52 f
+  add_24_root_add_2_root_add_39_I232/U423/Z (MUX21L)      0.49      28.01 r
+  add_24_root_add_2_root_add_39_I232/U328/Z (MUX21LP)     0.53      28.53 f
+  add_24_root_add_2_root_add_39_I232/U362/Z (MUX21LP)     1.03      29.56 r
+  add_24_root_add_2_root_add_39_I232/U353/Z (MUX21LP)     1.09      30.65 r
+  add_24_root_add_2_root_add_39_I232/U335/Z (IVAP)        0.31      30.97 f
+  add_24_root_add_2_root_add_39_I232/U127/Z (EOP)         1.21      32.18 f
+  add_24_root_add_2_root_add_39_I232/SUM[25] (fir_baseline_DW01_add_873)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/A[25] (fir_baseline_DW01_add_996)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/U554/Z (NR2P)        1.07      33.25 r
+  add_11_root_add_2_root_add_39_I232/U121/Z (MUX21LP)     0.43      33.68 f
+  add_11_root_add_2_root_add_39_I232/U117/Z (MUX21LP)     0.66      34.34 r
+  add_11_root_add_2_root_add_39_I232/U337/Z (IVP)         0.26      34.60 f
+  add_11_root_add_2_root_add_39_I232/U460/Z (EOP)         1.17      35.77 f
+  add_11_root_add_2_root_add_39_I232/SUM[26] (fir_baseline_DW01_add_996)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/B[26] (fir_baseline_DW01_add_715)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/U336/Z (OR2P)         1.08      36.85 f
+  add_5_root_add_2_root_add_39_I232/U506/Z (MUX21L)       0.96      37.80 r
+  add_5_root_add_2_root_add_39_I232/U503/Z (MUX21L)       0.89      38.70 r
+  add_5_root_add_2_root_add_39_I232/U84/Z (MUX21LP)       0.59      39.29 f
+  add_5_root_add_2_root_add_39_I232/U329/Z (IVAP)         0.36      39.65 r
+  add_5_root_add_2_root_add_39_I232/U375/Z (EOP)          1.21      40.86 f
+  add_5_root_add_2_root_add_39_I232/SUM[29] (fir_baseline_DW01_add_715)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/B[29] (fir_baseline_DW01_add_719)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/U358/Z (NR2P)         1.07      41.93 r
+  add_2_root_add_2_root_add_39_I232/U388/Z (MUX21L)       0.47      42.41 f
+  add_2_root_add_2_root_add_39_I232/U77/Z (MUX21LP)       0.63      43.03 r
+  add_2_root_add_2_root_add_39_I232/U56/Z (MUX21LP)       1.03      44.06 r
+  add_2_root_add_2_root_add_39_I232/U41/Z (MUX21LP)       1.16      45.22 r
+  add_2_root_add_2_root_add_39_I232/U36/Z (EOP)           1.21      46.43 f
+  add_2_root_add_2_root_add_39_I232/SUM[34] (fir_baseline_DW01_add_719)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/A[34] (fir_baseline_DW01_add_712)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/U319/Z (AN2)          0.93      47.36 f
+  add_0_root_add_2_root_add_39_I232/U357/Z (MUX21L)       0.96      48.31 r
+  add_0_root_add_2_root_add_39_I232/U375/Z (MUX21L)       0.89      49.20 r
+  add_0_root_add_2_root_add_39_I232/U327/Z (MUX21LP)      0.46      49.66 f
+  add_0_root_add_2_root_add_39_I232/U6/Z (EOP)            1.19      50.86 f
+  add_0_root_add_2_root_add_39_I232/SUM[37] (fir_baseline_DW01_add_712)
+                                                          0.00      50.86 f
+  U84/Z (IVA)                                             0.31      51.17 r
+  U96/Z (ND8)                                             1.63      52.80 f
+  U92/Z (ND2)                                             0.91      53.71 r
+  U110/Z (ND2)                                            0.56      54.27 f
+  U251/Z (ND3)                                            0.79      55.06 r
+  y_out_reg[11]/D (FD2)                                   0.00      55.06 r
+  data arrival time                                                 55.06
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  y_out_reg[11]/CP (FD2)                                  0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -55.06
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -45.91
+
+
+  Startpoint: x_delay_reg[157][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_out_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  x_delay_reg[157][3]/CP (FD2P)                           0.00 #     0.00 r
+  x_delay_reg[157][3]/Q (FD2P)                            2.13       2.13 r
+  mult_39_I158/a[3] (fir_baseline_DW_mult_tc_790)         0.00       2.13 r
+  mult_39_I158/U615/S (FA1A)                              2.43       4.56 r
+  mult_39_I158/U565/Z (EO)                                1.13       5.68 f
+  mult_39_I158/U564/Z (EO)                                1.26       6.94 f
+  mult_39_I158/product[5] (fir_baseline_DW_mult_tc_790)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/A[5] (fir_baseline_DW01_add_993)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/U219/Z (NR2)        1.59       8.52 r
+  add_179_root_add_2_root_add_39_I232/U462/Z (MUX21L)     0.89       9.41 r
+  add_179_root_add_2_root_add_39_I232/U412/Z (MUX21L)     0.53       9.94 f
+  add_179_root_add_2_root_add_39_I232/U414/Z (MUX21L)     0.96      10.90 r
+  add_179_root_add_2_root_add_39_I232/U410/Z (MUX21H)     1.06      11.95 r
+  add_179_root_add_2_root_add_39_I232/U286/Z (MUX21LP)
+                                                          1.03      12.98 r
+  add_179_root_add_2_root_add_39_I232/U285/Z (MUX21LP)
+                                                          1.06      14.04 r
+  add_179_root_add_2_root_add_39_I232/U279/Z (MUX21LP)
+                                                          0.86      14.90 f
+  add_179_root_add_2_root_add_39_I232/U302/Z (IVP)        0.56      15.45 r
+  add_179_root_add_2_root_add_39_I232/U288/Z (EOP)        1.17      16.62 f
+  add_179_root_add_2_root_add_39_I232/SUM[15] (fir_baseline_DW01_add_993)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/B[15] (fir_baseline_DW01_add_995)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/U314/Z (OR2P)        1.08      17.70 f
+  add_79_root_add_2_root_add_39_I232/U305/Z (MUX21LP)     0.99      18.70 r
+  add_79_root_add_2_root_add_39_I232/U445/Z (MUX21L)      0.89      19.59 r
+  add_79_root_add_2_root_add_39_I232/U444/Z (MUX21L)      0.63      20.22 f
+  add_79_root_add_2_root_add_39_I232/U302/Z (IV)          0.81      21.03 r
+  add_79_root_add_2_root_add_39_I232/U387/Z (EO)          1.32      22.35 f
+  add_79_root_add_2_root_add_39_I232/SUM[18] (fir_baseline_DW01_add_995)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/A[18] (fir_baseline_DW01_add_994)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/U294/Z (NR2P)        1.07      23.42 r
+  add_49_root_add_2_root_add_39_I232/U447/Z (MUX21L)      0.89      24.32 r
+  add_49_root_add_2_root_add_39_I232/U110/Z (MUX21LP)     0.59      24.91 f
+  add_49_root_add_2_root_add_39_I232/U279/Z (IVAP)        0.36      25.27 r
+  add_49_root_add_2_root_add_39_I232/U300/Z (EOP)         1.17      26.44 f
+  add_49_root_add_2_root_add_39_I232/SUM[20] (fir_baseline_DW01_add_994)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/A[20] (fir_baseline_DW01_add_873)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/U363/Z (OR2P)        1.08      27.52 f
+  add_24_root_add_2_root_add_39_I232/U423/Z (MUX21L)      0.49      28.01 r
+  add_24_root_add_2_root_add_39_I232/U328/Z (MUX21LP)     0.53      28.53 f
+  add_24_root_add_2_root_add_39_I232/U362/Z (MUX21LP)     1.03      29.56 r
+  add_24_root_add_2_root_add_39_I232/U353/Z (MUX21LP)     1.09      30.65 r
+  add_24_root_add_2_root_add_39_I232/U335/Z (IVAP)        0.31      30.97 f
+  add_24_root_add_2_root_add_39_I232/U127/Z (EOP)         1.21      32.18 f
+  add_24_root_add_2_root_add_39_I232/SUM[25] (fir_baseline_DW01_add_873)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/A[25] (fir_baseline_DW01_add_996)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/U554/Z (NR2P)        1.07      33.25 r
+  add_11_root_add_2_root_add_39_I232/U121/Z (MUX21LP)     0.43      33.68 f
+  add_11_root_add_2_root_add_39_I232/U117/Z (MUX21LP)     0.66      34.34 r
+  add_11_root_add_2_root_add_39_I232/U337/Z (IVP)         0.26      34.60 f
+  add_11_root_add_2_root_add_39_I232/U460/Z (EOP)         1.17      35.77 f
+  add_11_root_add_2_root_add_39_I232/SUM[26] (fir_baseline_DW01_add_996)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/B[26] (fir_baseline_DW01_add_715)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/U336/Z (OR2P)         1.08      36.85 f
+  add_5_root_add_2_root_add_39_I232/U506/Z (MUX21L)       0.96      37.80 r
+  add_5_root_add_2_root_add_39_I232/U503/Z (MUX21L)       0.89      38.70 r
+  add_5_root_add_2_root_add_39_I232/U84/Z (MUX21LP)       0.59      39.29 f
+  add_5_root_add_2_root_add_39_I232/U329/Z (IVAP)         0.36      39.65 r
+  add_5_root_add_2_root_add_39_I232/U375/Z (EOP)          1.21      40.86 f
+  add_5_root_add_2_root_add_39_I232/SUM[29] (fir_baseline_DW01_add_715)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/B[29] (fir_baseline_DW01_add_719)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/U358/Z (NR2P)         1.07      41.93 r
+  add_2_root_add_2_root_add_39_I232/U388/Z (MUX21L)       0.47      42.41 f
+  add_2_root_add_2_root_add_39_I232/U77/Z (MUX21LP)       0.63      43.03 r
+  add_2_root_add_2_root_add_39_I232/U56/Z (MUX21LP)       1.03      44.06 r
+  add_2_root_add_2_root_add_39_I232/U41/Z (MUX21LP)       1.16      45.22 r
+  add_2_root_add_2_root_add_39_I232/U36/Z (EOP)           1.21      46.43 f
+  add_2_root_add_2_root_add_39_I232/SUM[34] (fir_baseline_DW01_add_719)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/A[34] (fir_baseline_DW01_add_712)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/U319/Z (AN2)          0.93      47.36 f
+  add_0_root_add_2_root_add_39_I232/U357/Z (MUX21L)       0.96      48.31 r
+  add_0_root_add_2_root_add_39_I232/U375/Z (MUX21L)       0.89      49.20 r
+  add_0_root_add_2_root_add_39_I232/U327/Z (MUX21LP)      0.46      49.66 f
+  add_0_root_add_2_root_add_39_I232/U6/Z (EOP)            1.19      50.86 f
+  add_0_root_add_2_root_add_39_I232/SUM[37] (fir_baseline_DW01_add_712)
+                                                          0.00      50.86 f
+  U84/Z (IVA)                                             0.31      51.17 r
+  U96/Z (ND8)                                             1.63      52.80 f
+  U92/Z (ND2)                                             0.91      53.71 r
+  U110/Z (ND2)                                            0.56      54.27 f
+  U231/Z (ND3)                                            0.79      55.06 r
+  y_out_reg[8]/D (FD2)                                    0.00      55.06 r
+  data arrival time                                                 55.06
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  y_out_reg[8]/CP (FD2)                                   0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -55.06
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -45.91
+
+
+  Startpoint: x_delay_reg[157][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y_out_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  x_delay_reg[157][3]/CP (FD2P)                           0.00 #     0.00 r
+  x_delay_reg[157][3]/Q (FD2P)                            2.13       2.13 r
+  mult_39_I158/a[3] (fir_baseline_DW_mult_tc_790)         0.00       2.13 r
+  mult_39_I158/U615/S (FA1A)                              2.43       4.56 r
+  mult_39_I158/U565/Z (EO)                                1.13       5.68 f
+  mult_39_I158/U564/Z (EO)                                1.26       6.94 f
+  mult_39_I158/product[5] (fir_baseline_DW_mult_tc_790)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/A[5] (fir_baseline_DW01_add_993)
+                                                          0.00       6.94 f
+  add_179_root_add_2_root_add_39_I232/U219/Z (NR2)        1.59       8.52 r
+  add_179_root_add_2_root_add_39_I232/U462/Z (MUX21L)     0.89       9.41 r
+  add_179_root_add_2_root_add_39_I232/U412/Z (MUX21L)     0.53       9.94 f
+  add_179_root_add_2_root_add_39_I232/U414/Z (MUX21L)     0.96      10.90 r
+  add_179_root_add_2_root_add_39_I232/U410/Z (MUX21H)     1.06      11.95 r
+  add_179_root_add_2_root_add_39_I232/U286/Z (MUX21LP)
+                                                          1.03      12.98 r
+  add_179_root_add_2_root_add_39_I232/U285/Z (MUX21LP)
+                                                          1.06      14.04 r
+  add_179_root_add_2_root_add_39_I232/U279/Z (MUX21LP)
+                                                          0.86      14.90 f
+  add_179_root_add_2_root_add_39_I232/U302/Z (IVP)        0.56      15.45 r
+  add_179_root_add_2_root_add_39_I232/U288/Z (EOP)        1.17      16.62 f
+  add_179_root_add_2_root_add_39_I232/SUM[15] (fir_baseline_DW01_add_993)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/B[15] (fir_baseline_DW01_add_995)
+                                                          0.00      16.62 f
+  add_79_root_add_2_root_add_39_I232/U314/Z (OR2P)        1.08      17.70 f
+  add_79_root_add_2_root_add_39_I232/U305/Z (MUX21LP)     0.99      18.70 r
+  add_79_root_add_2_root_add_39_I232/U445/Z (MUX21L)      0.89      19.59 r
+  add_79_root_add_2_root_add_39_I232/U444/Z (MUX21L)      0.63      20.22 f
+  add_79_root_add_2_root_add_39_I232/U302/Z (IV)          0.81      21.03 r
+  add_79_root_add_2_root_add_39_I232/U387/Z (EO)          1.32      22.35 f
+  add_79_root_add_2_root_add_39_I232/SUM[18] (fir_baseline_DW01_add_995)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/A[18] (fir_baseline_DW01_add_994)
+                                                          0.00      22.35 f
+  add_49_root_add_2_root_add_39_I232/U294/Z (NR2P)        1.07      23.42 r
+  add_49_root_add_2_root_add_39_I232/U447/Z (MUX21L)      0.89      24.32 r
+  add_49_root_add_2_root_add_39_I232/U110/Z (MUX21LP)     0.59      24.91 f
+  add_49_root_add_2_root_add_39_I232/U279/Z (IVAP)        0.36      25.27 r
+  add_49_root_add_2_root_add_39_I232/U300/Z (EOP)         1.17      26.44 f
+  add_49_root_add_2_root_add_39_I232/SUM[20] (fir_baseline_DW01_add_994)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/A[20] (fir_baseline_DW01_add_873)
+                                                          0.00      26.44 f
+  add_24_root_add_2_root_add_39_I232/U363/Z (OR2P)        1.08      27.52 f
+  add_24_root_add_2_root_add_39_I232/U423/Z (MUX21L)      0.49      28.01 r
+  add_24_root_add_2_root_add_39_I232/U328/Z (MUX21LP)     0.53      28.53 f
+  add_24_root_add_2_root_add_39_I232/U362/Z (MUX21LP)     1.03      29.56 r
+  add_24_root_add_2_root_add_39_I232/U353/Z (MUX21LP)     1.09      30.65 r
+  add_24_root_add_2_root_add_39_I232/U335/Z (IVAP)        0.31      30.97 f
+  add_24_root_add_2_root_add_39_I232/U127/Z (EOP)         1.21      32.18 f
+  add_24_root_add_2_root_add_39_I232/SUM[25] (fir_baseline_DW01_add_873)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/A[25] (fir_baseline_DW01_add_996)
+                                                          0.00      32.18 f
+  add_11_root_add_2_root_add_39_I232/U554/Z (NR2P)        1.07      33.25 r
+  add_11_root_add_2_root_add_39_I232/U121/Z (MUX21LP)     0.43      33.68 f
+  add_11_root_add_2_root_add_39_I232/U117/Z (MUX21LP)     0.66      34.34 r
+  add_11_root_add_2_root_add_39_I232/U337/Z (IVP)         0.26      34.60 f
+  add_11_root_add_2_root_add_39_I232/U460/Z (EOP)         1.17      35.77 f
+  add_11_root_add_2_root_add_39_I232/SUM[26] (fir_baseline_DW01_add_996)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/B[26] (fir_baseline_DW01_add_715)
+                                                          0.00      35.77 f
+  add_5_root_add_2_root_add_39_I232/U336/Z (OR2P)         1.08      36.85 f
+  add_5_root_add_2_root_add_39_I232/U506/Z (MUX21L)       0.96      37.80 r
+  add_5_root_add_2_root_add_39_I232/U503/Z (MUX21L)       0.89      38.70 r
+  add_5_root_add_2_root_add_39_I232/U84/Z (MUX21LP)       0.59      39.29 f
+  add_5_root_add_2_root_add_39_I232/U329/Z (IVAP)         0.36      39.65 r
+  add_5_root_add_2_root_add_39_I232/U375/Z (EOP)          1.21      40.86 f
+  add_5_root_add_2_root_add_39_I232/SUM[29] (fir_baseline_DW01_add_715)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/B[29] (fir_baseline_DW01_add_719)
+                                                          0.00      40.86 f
+  add_2_root_add_2_root_add_39_I232/U358/Z (NR2P)         1.07      41.93 r
+  add_2_root_add_2_root_add_39_I232/U388/Z (MUX21L)       0.47      42.41 f
+  add_2_root_add_2_root_add_39_I232/U77/Z (MUX21LP)       0.63      43.03 r
+  add_2_root_add_2_root_add_39_I232/U56/Z (MUX21LP)       1.03      44.06 r
+  add_2_root_add_2_root_add_39_I232/U41/Z (MUX21LP)       1.16      45.22 r
+  add_2_root_add_2_root_add_39_I232/U36/Z (EOP)           1.21      46.43 f
+  add_2_root_add_2_root_add_39_I232/SUM[34] (fir_baseline_DW01_add_719)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/A[34] (fir_baseline_DW01_add_712)
+                                                          0.00      46.43 f
+  add_0_root_add_2_root_add_39_I232/U319/Z (AN2)          0.93      47.36 f
+  add_0_root_add_2_root_add_39_I232/U357/Z (MUX21L)       0.96      48.31 r
+  add_0_root_add_2_root_add_39_I232/U375/Z (MUX21L)       0.89      49.20 r
+  add_0_root_add_2_root_add_39_I232/U327/Z (MUX21LP)      0.46      49.66 f
+  add_0_root_add_2_root_add_39_I232/U6/Z (EOP)            1.19      50.86 f
+  add_0_root_add_2_root_add_39_I232/SUM[37] (fir_baseline_DW01_add_712)
+                                                          0.00      50.86 f
+  U84/Z (IVA)                                             0.31      51.17 r
+  U96/Z (ND8)                                             1.63      52.80 f
+  U92/Z (ND2)                                             0.91      53.71 r
+  U110/Z (ND2)                                            0.56      54.27 f
+  U204/Z (ND3)                                            0.79      55.06 r
+  y_out_reg[4]/D (FD2)                                    0.00      55.06 r
+  data arrival time                                                 55.06
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  y_out_reg[4]/CP (FD2)                                   0.00      10.00 r
+  library setup time                                     -0.85       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                -55.06
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -45.91
+
+
+1

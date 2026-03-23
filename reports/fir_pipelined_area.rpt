@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : fir_pipelined
+Version: W-2024.09-SP2
+Date   : Wed Mar 18 21:37:15 2026
+****************************************
+
+Library(s) Used:
+
+    lsi_10k (File: /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db)
+
+Number of ports:                           34
+Number of nets:                         55932
+Number of cells:                        35025
+Number of combinational cells:          22183
+Number of sequential cells:             12841
+Number of macros/black boxes:               0
+Number of buf/inv:                        358
+Number of references:                      42
+
+Combinational area:             164083.000000
+Buf/Inv area:                      530.000000
+Noncombinational area:          113253.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                277336.000000
+Total area:                 undefined
+1

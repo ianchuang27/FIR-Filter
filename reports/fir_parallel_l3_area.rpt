@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : fir_parallel_l3
+Version: W-2024.09-SP2
+Date   : Wed Mar 18 21:29:00 2026
+****************************************
+
+Library(s) Used:
+
+    lsi_10k (File: /cad/synopsys/design_compiler/W-2024.09-SP2/libraries/syn/lsi_10k.db)
+
+Number of ports:                           34
+Number of nets:                         44324
+Number of cells:                        23451
+Number of combinational cells:          19721
+Number of sequential cells:              3728
+Number of macros/black boxes:               0
+Number of buf/inv:                        655
+Number of references:                      41
+
+Combinational area:             158121.000000
+Buf/Inv area:                     1206.000000
+Noncombinational area:           27051.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                185172.000000
+Total area:                 undefined
+1

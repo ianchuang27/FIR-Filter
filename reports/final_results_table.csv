@@ -1,0 +1,6 @@
+Architecture,Area,WorstSlack_ns,Est_Tmin_ns,Est_Fmax_MHz,DynamicPower,Ranking_Speed
+Baseline,357213,-46.02,56.02,17.85,846.4089 uW,5
+Parallel_L2,185310,-34.68,44.68,22.38,2.9167 mW,4
+Parallel_L3,185172,-34.60,44.60,22.42,2.9160 mW,3
+Pipelined,277336,-11.20,21.20,47.17,288.7574 uW,2
+Pipe_Parallel_L3,249064,-10.46,20.46,48.88,3.7255 mW,1
