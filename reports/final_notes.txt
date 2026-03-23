@@ -1,0 +1,9 @@
+- The fastest final architecture was fir_pipe_parallel_l3.
+- The best speed order achieved was:
+  1) Pipe + Parallel L3
+  2) Pipelined
+  3) Parallel L3
+  4) Parallel L2
+  5) Baseline
+- The pipelined-only design gave the lowest dynamic power.
+- The parallel L2/L3 designs gave the smallest area.
